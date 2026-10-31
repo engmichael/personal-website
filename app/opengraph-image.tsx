@@ -1,0 +1,38 @@
+import { ImageResponse } from "next/og";
+
+export const alt = "Michael Eng — Strategy & Operations, MBA Candidate at Chicago Booth";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+export default function Image() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          padding: 80,
+          background: "radial-gradient(circle at 80% 20%, #3a2610 0%, #0A0A0B 60%)",
+          color: "#F4F1EA",
+          fontSize: 150,
+          lineHeight: 1.02,
+          letterSpacing: -4,
+        }}
+      >
+        <div style={{ fontSize: 26, letterSpacing: 4, color: "#A7A29A", marginBottom: 28 }}>
+          MBA CANDIDATE · CHICAGO BOOTH
+        </div>
+        <div style={{ display: "flex" }}>
+          Michael&nbsp;<span style={{ color: "#E8A15C" }}>Eng.</span>
+        </div>
+        <div style={{ fontSize: 40, letterSpacing: -1, color: "#A7A29A", marginTop: 28 }}>
+          Strategy and operations for businesses in motion.
+        </div>
+      </div>
+    ),
+    size,
+  );
+}
