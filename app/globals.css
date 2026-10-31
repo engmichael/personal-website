@@ -20,6 +20,7 @@
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-signature: var(--font-signature);
 
   --text-2xs: var(--fs-2xs);
   --text-xs: var(--fs-xs);

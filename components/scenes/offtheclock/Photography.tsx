@@ -12,7 +12,7 @@ export function Photography() {
   return (
     <div id="photography">
       <BlockHeader
-        numeral="4.3"
+        numeral="3.3"
         title={block.title}
         lede={block.lede}
         aside={

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { experience, education } from "@/content/work";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
-/** Chapter 02 — Experience. Roles on a scroll-linked rail, then earlier roles and education. */
+/** Chapter 1 — Experience. Roles on a scroll-linked rail, then earlier roles and education. */
 export function WorkScene() {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -17,7 +17,7 @@ export function WorkScene() {
   return (
     <Chapter
       id="experience"
-      num="2"
+      num="1"
       title="Experience"
       kicker={`${experience.employer} ${experience.practice} → Chicago Booth`}
       glow="76% 40%"

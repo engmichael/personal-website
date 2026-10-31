@@ -1,4 +1,4 @@
-/* Chapter 03 — Leadership & impact. Stat-led cards + Booth involvement,
+/* Chapter 2 — Leadership & impact. Stat-led cards + Booth involvement,
    from the résumé's Education and Additional sections. */
 
 export type Achievement = {

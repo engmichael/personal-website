@@ -1,13 +1,16 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { site } from "@/content/site";
+import { letter } from "@/content/letter";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { useIsTouch } from "@/lib/hooks/useIsTouch";
 import { ease } from "@/lib/motion/tokens";
 import { Button } from "@/components/ui/Button";
+import { Signature } from "@/components/ui/Signature";
 import { cn } from "@/lib/utils/cn";
 
 // Heavy: Three/R3F are code-split and only fetched when we actually render this.
@@ -21,15 +24,19 @@ const HeroCanvas = dynamic(
   { ssr: false },
 );
 
-const nameParts = ["Michael", "Eng"];
-
 const facts: { label: string; value: string; href?: string }[] = [
-  { label: "Now", value: "MBA/MPCS @ Chicago Booth" },
   { label: "Previously", value: "Strategy @ Accenture" },
   { label: "Focus", value: "Strategy · Partnerships · Education" },
+  { label: "Languages", value: "Cantonese (fluent) · Mandarin" },
   { label: "Off the Clock", value: "Travel · Food · Photography", href: "#off-the-clock" },
 ];
 
+/**
+ * The hero is a short signed letter beside the portrait, like a CEO's letter:
+ * an opening line, two paragraphs, the signature and a typed sign-off. The
+ * name lives in the header and the sign-off, so there's no display headline;
+ * the h1 is kept for search and screen readers.
+ */
 export function Hero() {
   const reduced = useReducedMotion();
   const touch = useIsTouch();
@@ -60,7 +67,7 @@ export function Hero() {
   const enableWebgl = ready && site.flags.webglHero && !reduced && !touch;
 
   return (
-    <section id="hero" className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
+    <section id="hero" className="relative flex min-h-[100svh] flex-col overflow-hidden">
       {/* Background: static gradient always (also the WebGL fallback), canvas on top when allowed. */}
       <div className="hero-gradient absolute inset-0 -z-10" aria-hidden />
       {enableWebgl && (
@@ -91,74 +98,106 @@ export function Hero() {
         </div>
       )}
 
-      <div className="shell pt-24 pb-8">
-        <motion.div
-          className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3"
-          initial={reduced ? false : { opacity: 0 }}
-          animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          <span className="mono-label">MBA/MPCS Candidate · Chicago Booth</span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-base/40 px-3 py-1 text-xs text-fg-muted backdrop-blur">
-            <span className="relative flex h-1.5 w-1.5">
-              {!reduced && (
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              )}
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-            </span>
-            {site.seeking.badge}
-          </span>
-        </motion.div>
-
-        <h1 className="font-display text-display leading-[0.95]">
-          <span className="sr-only">{site.name}</span>
-          <span aria-hidden className="flex flex-wrap gap-x-[0.26em]">
-            {nameParts.map((part, i) => (
-              <span key={part} className="block overflow-hidden pb-[0.08em]">
-                <motion.span
-                  className="block"
-                  initial={reduced ? false : { y: "110%" }}
-                  animate={start || reduced ? { y: 0 } : { y: "110%" }}
-                  transition={{ duration: 1, delay: 0.15 + i * 0.1, ease: [...ease.outExpo] }}
-                >
-                  {part}
-                </motion.span>
-              </span>
-            ))}
-          </span>
-        </h1>
-
-        <motion.div
-          className="mt-10 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end"
-          initial={reduced ? false : { opacity: 0, y: 16 }}
-          animate={start || reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: [...ease.outExpo] }}
-        >
+      <div className="shell flex flex-1 items-center pt-28 pb-10">
+        <h1 className="sr-only">{site.name}</h1>
+        <div className="grid w-full gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:items-center md:gap-16">
           <div>
-            <p className="max-w-[30ch] font-display text-xl leading-[1.12]">
+            <motion.div
+              className="mb-7 flex flex-wrap items-center gap-x-6 gap-y-3"
+              initial={reduced ? false : { opacity: 0 }}
+              animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <span className="mono-label">MBA/MPCS Candidate · Chicago Booth</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-base/40 px-3 py-1 text-xs text-fg-muted backdrop-blur">
+                <span className="relative flex h-1.5 w-1.5">
+                  {!reduced && (
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                  )}
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+                </span>
+                {site.seeking.badge}
+              </span>
+            </motion.div>
+
+            <motion.p
+              className="max-w-[22ch] font-display text-[clamp(2.1rem,1.4rem+2.1vw,3.4rem)] leading-[1.04]"
+              initial={reduced ? false : { opacity: 0, y: 24 }}
+              animate={start || reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 1, delay: 0.2, ease: [...ease.outExpo] }}
+            >
               Strategy and operations for businesses{" "}
               <em className="italic text-accent">in motion.</em>
-            </p>
-            <p className="mt-4 max-w-[56ch] text-fg-muted">
-              Most recently a Strategy Consultant at Accenture, where I helped scale Waymo&apos;s
-              autonomous fleet from 20 vehicles to 500. Now pursuing a joint MBA and MS in
-              Computer Science at Chicago Booth.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 md:justify-end">
-            <Button href="#contact" arrow cursorLabel="Contact">
-              Get in touch
-            </Button>
-            <Button
-              href={site.resume ?? site.linkedin}
-              variant="outline"
-              cursorLabel="Open"
-              external
+            </motion.p>
+
+            <motion.div
+              className="mt-6 max-w-[58ch] space-y-4 text-fg-muted"
+              initial={reduced ? false : { opacity: 0, y: 16 }}
+              animate={start || reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [...ease.outExpo] }}
             >
-              {site.resume ? "Résumé" : "LinkedIn"}
-            </Button>
+              {letter.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </motion.div>
+
+            <div className="mt-8 flex flex-wrap items-end justify-between gap-x-10 gap-y-7">
+              <div>
+                <Signature start={start || reduced} delay={0.9} className="text-[3.4rem] text-fg/90 md:text-[4rem]">
+                  {letter.signoff.name}
+                </Signature>
+                <motion.div
+                  className="mt-3 border-t border-border/70 pt-3"
+                  initial={reduced ? false : { opacity: 0 }}
+                  animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 }}
+                >
+                  <div className="font-display text-md leading-none">{letter.signoff.name}</div>
+                  <div className="mono-label mt-2" style={{ fontSize: 10 }}>
+                    {letter.signoff.title}
+                  </div>
+                </motion.div>
+              </div>
+              <motion.div
+                className="flex flex-wrap gap-3"
+                initial={reduced ? false : { opacity: 0, y: 12 }}
+                animate={start || reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+                transition={{ duration: 0.8, delay: 0.7, ease: [...ease.outExpo] }}
+              >
+                <Button href="#contact" arrow cursorLabel="Contact">
+                  Get in touch
+                </Button>
+                <Button
+                  href={site.resume ?? site.linkedin}
+                  variant="outline"
+                  cursorLabel="Open"
+                  external
+                >
+                  {site.resume ? "Résumé" : "LinkedIn"}
+                </Button>
+              </motion.div>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Portrait — first on phones (a face before the words), beside the letter from md. */}
+          <motion.figure
+            className="order-first w-full max-w-[13rem] md:order-none md:max-w-[min(26rem,46svh)] md:justify-self-end"
+            initial={reduced ? false : { opacity: 0, scale: 1.03 }}
+            animate={start || reduced ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.03 }}
+            transition={{ duration: 1.2, delay: 0.25, ease: [...ease.outExpo] }}
+          >
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface">
+              <Image
+                src={letter.portrait.src}
+                alt={letter.portrait.alt}
+                fill
+                preload
+                sizes="(max-width: 768px) 13rem, 26rem"
+                className="object-cover object-[52%_30%]"
+              />
+            </div>
+          </motion.figure>
+        </div>
       </div>
 
       {/* Fact strip — the at-a-glance read. Hobbies are named as hobbies. */}

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Mrs_Saint_Delafield } from "next/font/google";
 import { ClientProviders } from "@/components/providers/ClientProviders";
 import { SiteHeader } from "@/components/ui/SiteHeader";
 import { site } from "@/content/site";
@@ -17,6 +17,13 @@ const cormorant = Cormorant_Garamond({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+// Stand-in for the hero sign-off until a real signature SVG replaces it.
+const signature = Mrs_Saint_Delafield({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-signature-face",
   display: "swap",
 });
 
@@ -49,7 +56,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${inter.variable} ${signature.variable}`}
     >
       <body suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: preloadScript }} />

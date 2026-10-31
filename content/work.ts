@@ -1,4 +1,4 @@
-/* Chapter 02 — Experience. Professional history + education, from the résumé
+/* Chapter 1 — Experience. Professional history + education, from the résumé
    (ENG_MICHAEL_RESUME.pdf). Leadership and volunteer work live in
    `achievements.ts`. */
 

@@ -2,10 +2,10 @@ import { Chapter } from "./Chapter";
 import { Reveal } from "@/components/motion/Reveal";
 import { achievements, boothGroups } from "@/content/achievements";
 
-/** Chapter 03 — Leadership & impact. Stat-led cards, then current Booth groups. */
+/** Chapter 2 — Leadership & impact. Stat-led cards, then current Booth groups. */
 export function AchievementsScene() {
   return (
-    <Chapter id="leadership" num="3" title="Leadership & impact" kicker="Built, led, raised" glow="28% 55%">
+    <Chapter id="leadership" num="2" title="Leadership & impact" kicker="Built, led, raised" glow="28% 55%">
       <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {achievements.map((a, i) => (
           <Reveal key={a.title} delay={0.08 * i}>

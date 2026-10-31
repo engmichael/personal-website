@@ -1,4 +1,4 @@
-/* Chapter 04 — Off the Clock. One chapter, three hobbies, told the same way.
+/* Chapter 3 — Off the Clock. One chapter, three hobbies, told the same way.
    Each block's data lives in photos.ts / places.ts / eats.ts. */
 
 export const offTheClock = {
