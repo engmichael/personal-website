@@ -27,7 +27,6 @@ const HeroCanvas = dynamic(
 const facts: { label: string; value: string; href?: string }[] = [
   { label: "Previously", value: "Strategy @ Accenture" },
   { label: "Focus", value: "Strategy · Partnerships · Education" },
-  { label: "Languages", value: "Cantonese (fluent) · Mandarin" },
   { label: "Off the Clock", value: "Travel · Food · Photography", href: "#off-the-clock" },
 ];
 
@@ -207,7 +206,7 @@ export function Hero() {
         animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
-        <dl className="grid grid-cols-2 border-t border-border/70 md:grid-cols-4">
+        <dl className="grid grid-cols-2 border-t border-border/70 md:grid-cols-3">
           {facts.map((f, i) => (
             <div
               key={f.label}
