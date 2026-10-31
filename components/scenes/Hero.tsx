@@ -16,11 +16,11 @@ const HeroCanvas = dynamic(
   { ssr: false },
 );
 
-const lines = ["Michael", "Eng."];
+const nameParts = ["Michael", "Eng"];
 
 const facts: { label: string; value: string; href?: string }[] = [
-  { label: "Now", value: "MBA, Chicago Booth" },
-  { label: "Previously", value: "Strategy, Accenture" },
+  { label: "Now", value: "MBA/MPCS @ Chicago Booth" },
+  { label: "Previously", value: "Strategy @ Accenture" },
   { label: "Focus", value: "Strategy · Ops · Partnerships" },
   { label: "Off the clock", value: "Photography · Travel · Food", href: "#off-the-clock" },
 ];
@@ -92,30 +92,34 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <h1 className="font-display text-display leading-[0.86] tracking-[-0.03em]">
-          {lines.map((line, i) => (
-            <span key={line} className="block overflow-hidden pb-[0.06em]">
-              <motion.span
-                className={i === 1 ? "block text-accent" : "block"}
-                initial={reduced ? false : { y: "110%" }}
-                animate={start || reduced ? { y: 0 } : { y: "110%" }}
-                transition={{ duration: 0.9, delay: 0.15 + i * 0.12, ease: [...ease.outExpo] }}
-              >
-                {line}
-              </motion.span>
-            </span>
-          ))}
+        <h1 className="font-display text-display leading-[0.95]">
+          <span className="sr-only">{site.name}</span>
+          <span aria-hidden className="flex flex-wrap gap-x-[0.26em]">
+            {nameParts.map((part, i) => (
+              <span key={part} className="block overflow-hidden pb-[0.08em]">
+                <motion.span
+                  className="block"
+                  initial={reduced ? false : { y: "110%" }}
+                  animate={start || reduced ? { y: 0 } : { y: "110%" }}
+                  transition={{ duration: 1, delay: 0.15 + i * 0.1, ease: [...ease.outExpo] }}
+                >
+                  {part}
+                </motion.span>
+              </span>
+            ))}
+          </span>
         </h1>
 
         <motion.div
-          className="mt-8 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end"
+          className="mt-10 grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end"
           initial={reduced ? false : { opacity: 0, y: 16 }}
           animate={start || reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.8, delay: 0.5, ease: [...ease.outExpo] }}
         >
           <div>
-            <p className="max-w-[28ch] font-display text-lg leading-[1.1]">
-              Strategy and operations for businesses in motion.
+            <p className="max-w-[30ch] font-display text-xl leading-[1.12]">
+              Strategy and operations for businesses{" "}
+              <em className="italic text-accent">in motion.</em>
             </p>
             <p className="mt-4 max-w-[56ch] text-fg-muted">
               Most recently at Accenture, where I helped scale Waymo&apos;s autonomous fleet

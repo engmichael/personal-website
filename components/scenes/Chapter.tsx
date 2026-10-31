@@ -31,7 +31,7 @@ export function Chapter({ id, num, title, kicker, children, className, bleed, gl
       <div className="shell">
         <Reveal>
           <div className="mb-12 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-border/60 pb-5">
-            <span className="mono-label">§ {num}</span>
+            <span className="font-display text-lg italic leading-none text-accent">{num}</span>
             <h2 className="font-display text-2xl leading-none">{title}</h2>
             {kicker && <span className="ml-auto text-sm text-fg-subtle">{kicker}</span>}
           </div>

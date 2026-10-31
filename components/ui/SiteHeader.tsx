@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
@@ -8,13 +9,14 @@ import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { ease } from "@/lib/motion/tokens";
 
 /**
- * Minimal persistent chrome: a name mark (→ home), section links, résumé, contact. Hides on
+ * Minimal persistent chrome: the 吳 mark, a hairline divider and the name (→ home),
+ * section links, résumé, contact. Hides on
  * scroll-down and returns on scroll-up. Always visible under reduced-motion.
  */
 const links = [
   { label: "Experience", href: "#experience" },
   { label: "Leadership", href: "#leadership" },
-  { label: "Off the clock", href: "#off-the-clock" },
+  { label: "Off the Clock", href: "#off-the-clock" },
 ];
 
 export function SiteHeader() {
@@ -40,9 +42,20 @@ export function SiteHeader() {
       transition={{ duration: 0.5, ease: [...ease.outExpo] }}
     >
       <div className="shell flex items-center justify-between py-5">
-        <Link href="/" className="font-display text-lg tracking-tight" data-cursor>
-          {site.shortName}
-          <span className="text-accent">.</span>
+        <Link href="/" className="flex items-center gap-4" data-cursor aria-label={`${site.name}, home`}>
+          <Image
+            src="/brand/wu-white.svg"
+            alt=""
+            width={756}
+            height={1100}
+            unoptimized
+            priority
+            className="h-8 w-auto"
+          />
+          <span aria-hidden className="h-6 w-px bg-fg/25" />
+          <span className="font-display text-[0.95rem] font-semibold uppercase leading-none tracking-[0.3em]">
+            {site.name}
+          </span>
         </Link>
         <nav className="flex items-center gap-6 text-sm text-fg-muted">
           {links.map((l) => (
@@ -54,7 +67,7 @@ export function SiteHeader() {
             href={site.resume ?? site.linkedin}
             target={site.resume ? undefined : "_blank"}
             rel={site.resume ? undefined : "noopener noreferrer"}
-            className="link-underline hover:text-fg"
+            className="link-underline hidden hover:text-fg sm:inline-block"
             data-cursor
           >
             {site.resume ? "Résumé" : "LinkedIn"}

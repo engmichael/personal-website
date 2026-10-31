@@ -37,7 +37,7 @@ export function Travel() {
             <div className="border-t border-border/60 pt-3">
               <div className="flex items-baseline justify-between gap-3">
                 <span className="font-display">{p.name}</span>
-                {p.stat && <span className="font-mono text-xs text-accent">{p.stat}</span>}
+                {p.stat && <span className="font-display text-md italic leading-none text-accent">{p.stat}</span>}
               </div>
               <p className="mt-1 text-sm text-fg-muted">{p.desc}</p>
             </div>

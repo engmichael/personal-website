@@ -47,7 +47,7 @@ export const education: Education[] = [
   {
     years: "2026 — 2028",
     school: "The University of Chicago Booth School of Business",
-    degree: "MBA",
+    degree: "MBA / MPCS",
   },
   {
     years: "2018 — 2021",

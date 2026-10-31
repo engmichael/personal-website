@@ -1,24 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { ClientProviders } from "@/components/providers/ClientProviders";
 import { SiteHeader } from "@/components/ui/SiteHeader";
 import { site } from "@/content/site";
 import "./globals.css";
 
 // Self-hosted at build time by next/font — no runtime third-party requests.
-const bricolage = Bricolage_Grotesque({
+// Display + name: a refined Garamond with a true italic.
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-bricolage",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -51,7 +49,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${bricolage.variable} ${inter.variable} ${geistMono.variable}`}
+      className={`${cormorant.variable} ${inter.variable}`}
     >
       <body suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: preloadScript }} />

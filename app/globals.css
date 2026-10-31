@@ -78,6 +78,10 @@
     font-weight: 500;
     text-wrap: balance;
   }
+  /* Garamond defaults to old-style figures; stats and years read better lining. */
+  h1, h2, h3, h4, .font-display {
+    font-variant-numeric: lining-nums proportional-nums;
+  }
   p {
     text-wrap: pretty;
   }
@@ -103,9 +107,11 @@
     max-width: var(--maxw-wide);
   }
 
+  /* Spaced small capitals for eyebrows, meta and captions. */
   .mono-label {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: var(--fs-2xs);
+    font-weight: 500;
     letter-spacing: var(--tracking-wide);
     text-transform: uppercase;
     color: var(--fg-muted);
@@ -183,7 +189,7 @@
     transform: translateY(-160%);
     background: var(--accent);
     color: var(--accent-contrast);
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: var(--fs-xs);
     border-radius: var(--radius);
     transition: transform var(--dur-fast) var(--ease-out-expo);

@@ -4,7 +4,7 @@ export const about = {
   portrait: { src: "/media/portrait.jpg", alt: "Portrait of Michael Eng" },
   meta: [
     { label: "Based in", value: "Chicago, IL" },
-    { label: "Currently", value: "MBA @ Chicago Booth" },
+    { label: "Currently", value: "MBA/MPCS @ Chicago Booth" },
     { label: "Previously", value: "Strategy @ Accenture, NYC" },
     { label: "From", value: "Plano, Texas" },
   ],
