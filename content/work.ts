@@ -1,46 +1,75 @@
-/* Chapter 1 — Experience. Professional history + education, from the résumé
+/* Chapter 1 — Experience. One timeline, newest first: Chicago Booth →
+   Accenture → University of Texas (with its internships). From the résumé
    (ENG_MICHAEL_RESUME.pdf). Leadership and volunteer work live in
    `achievements.ts`. */
 
 export type Stat = { value: string; label: string };
 
-export type Role = {
-  title: string;
+/** A client project on the rail (Accenture). */
+export type Project = {
+  kind: "project";
+  role: string; // kept for reference; not shown
   years: string;
-  project: {
-    client: string;
-    focus: string;
-    summary: string;
-    stats: Stat[];
-    bullets: string[];
-  };
-};
-
-export type EarlierRole = {
-  org: string;
-  title: string;
-  location: string;
-  years: string;
+  client: string;
+  focus: string;
   summary: string;
+  stats: Stat[];
+  bullets: string[];
 };
 
-export type Education = {
+/** A lighter rail entry: a degree, an internship, involvement. */
+export type Note = {
+  kind: "note";
+  label: string;
+  title?: string;
+  summary?: string;
+  tags?: string[];
+};
+
+export type Org = {
+  id: string;
+  name: string;
+  meta: string;
   years: string;
-  school: string;
-  degree: string;
-  note?: string;
+  entries: (Project | Note)[];
 };
 
-export const experience = {
-  employer: "Accenture",
-  practice: "Strategy",
-  location: "New York",
-  years: "2021 — 2026",
-  roles: [
-    {
-      title: "Strategy Consultant",
-      years: "Jan 2024 — Sept 2026",
-      project: {
+export const experience: Org[] = [
+  {
+    id: "booth",
+    name: "Chicago Booth",
+    meta: "Chicago, IL",
+    years: "2026 — 2028",
+    entries: [
+      {
+        kind: "note",
+        label: "Joint degree",
+        title: "MBA & MS in Computer Science",
+        summary: "Concentrations in Strategic Management, Finance and International Business.",
+      },
+      {
+        kind: "note",
+        label: "Involvement",
+        tags: [
+          "Graduate Business Council (elected)",
+          "Management Consulting Group",
+          "Booth Education Group",
+          "Net Impact",
+          "Epicurean Club",
+        ],
+      },
+    ],
+  },
+  {
+    id: "accenture",
+    name: "Accenture",
+    meta: "Strategy · New York",
+    years: "2021 — 2026",
+    entries: [
+      {
+        kind: "project",
+        role: "Strategy Consultant",
+        years: "Jan 2024 — Sept 2026",
         // The résumé anonymizes this client as "Leading Autonomous Vehicle
         // Ride-Hail Service"; the site names it, as the previous site did.
         client: "Waymo",
@@ -59,11 +88,10 @@ export const experience = {
           "Assessed operational maturity across six core functions and prioritized quick wins worth $8M+ in savings.",
         ],
       },
-    },
-    {
-      title: "Consulting Senior Analyst",
-      years: "Nov 2022 — Dec 2023",
-      project: {
+      {
+        kind: "project",
+        role: "Consulting Senior Analyst",
+        years: "Nov 2022 — Dec 2023",
         client: "Splunk & Kinaxis",
         focus: "GTM Strategy & Due Diligence",
         summary:
@@ -78,11 +106,10 @@ export const experience = {
           "Secured $35M+ in investments by running innovation workshops and building narratives for CEO, CFO and COO audiences.",
         ],
       },
-    },
-    {
-      title: "Consulting Analyst",
-      years: "Aug 2021 — Oct 2022",
-      project: {
+      {
+        kind: "project",
+        role: "Consulting Analyst",
+        years: "Aug 2021 — Oct 2022",
         client: "California EDD",
         focus: "Fraud Strategy & Remediation",
         summary:
@@ -97,31 +124,34 @@ export const experience = {
           "Synthesized the analysis into legislative briefing materials for Governor Newsom on the state's fraud response.",
         ],
       },
-    },
-  ] satisfies Role[],
-  earlier: [
-    {
-      org: "PwC",
-      title: "Financial Markets Intern",
-      location: "Dallas",
-      years: "Summer 2019",
-      summary:
-        "Ran right-of-use asset impairment valuations for 500+ retail properties across $250M+ in real estate deals, built purchase price allocations for a $90M deal, and advised asset managers on the LIBOR transition.",
-    },
-  ] satisfies EarlierRole[],
-};
-
-export const education: Education[] = [
-  {
-    years: "2026 — 2028",
-    school: "The University of Chicago Booth School of Business",
-    degree: "MBA & MS in Computer Science · Joint degree",
-    note: "Concentrations in Strategic Management, Finance and International Business.",
+    ],
   },
   {
+    id: "ut",
+    name: "University of Texas",
+    meta: "Austin, TX",
     years: "2017 — 2021",
-    school: "The University of Texas at Austin",
-    degree: "BBA, Finance & MIS · BA, Economics",
-    note: "Minors in Computer Science, Marketing and Educational Psychology. Studied abroad at VŠE Prague; interned abroad with Dun & Bradstreet in Hong Kong. Delta Sigma Pi, University Securities Investment Team, Club Volleyball, Convergent.",
+    entries: [
+      {
+        kind: "note",
+        label: "Undergraduate",
+        title: "BBA, Finance & MIS · BA, Economics",
+        summary:
+          "Minors in Computer Science, Marketing and Educational Psychology. Studied abroad at VŠE Prague.",
+        tags: ["Delta Sigma Pi", "University Securities Investment Team", "Club Volleyball", "Convergent"],
+      },
+      {
+        kind: "note",
+        label: "Summer 2019 · Dallas",
+        title: "PwC · Financial Markets Intern",
+        summary:
+          "Ran right-of-use asset impairment valuations for 500+ retail properties across $250M+ in real estate deals, built purchase price allocations for a $90M deal, and advised asset managers on the LIBOR transition.",
+      },
+      {
+        kind: "note",
+        label: "Internship abroad · Hong Kong",
+        title: "Dun & Bradstreet",
+      },
+    ],
   },
 ];

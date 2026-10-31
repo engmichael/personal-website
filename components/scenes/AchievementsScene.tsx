@@ -1,8 +1,8 @@
 import { Chapter } from "./Chapter";
 import { Reveal } from "@/components/motion/Reveal";
-import { achievements, boothGroups } from "@/content/achievements";
+import { achievements } from "@/content/achievements";
 
-/** Chapter 2 — Leadership & impact. Stat-led cards, then current Booth groups. */
+/** Chapter 2 — Leadership & impact. Stat-led cards. */
 export function AchievementsScene() {
   return (
     <Chapter id="leadership" num="2" title="Leadership & impact" kicker="Built, led, raised" glow="28% 55%">
@@ -25,26 +25,6 @@ export function AchievementsScene() {
             </div>
           </Reveal>
         ))}
-      </div>
-
-      <div className="mt-16 grid gap-6 border-t border-border/60 pt-8 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
-        <Reveal>
-          <div className="mono-label" style={{ fontSize: 10 }}>
-            At Booth
-          </div>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <ul className="flex flex-wrap gap-2">
-            {boothGroups.map((group) => (
-              <li
-                key={group}
-                className="rounded-[var(--radius)] border border-border px-3 py-1.5 text-sm text-fg-muted"
-              >
-                {group}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </div>
     </Chapter>
   );

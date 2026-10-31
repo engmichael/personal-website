@@ -1,5 +1,6 @@
-/* Chapter 2 — Leadership & impact. Stat-led cards + Booth involvement,
-   from the résumé's Education and Additional sections. */
+/* Chapter 2 — Leadership & impact. Stat-led cards from the résumé's
+   Education and Additional sections. Booth involvement lives on the
+   Experience timeline (`work.ts`). */
 
 export type Achievement = {
   stat: string;
@@ -43,12 +44,4 @@ export const achievements: Achievement[] = [
     when: "2025",
     desc: "Ran the five-borough race to raise funds and public visibility for Success Academy's educational-equity mission.",
   },
-];
-
-export const boothGroups = [
-  "Graduate Business Council (elected)",
-  "Management Consulting Group",
-  "Booth Education Group",
-  "Net Impact",
-  "Epicurean Club",
 ];
