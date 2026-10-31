@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 /** Chapter 05 — Contact / outro. */
 export function ContactScene() {
   return (
-    <Chapter id="contact" num="05" title="Contact" kicker="Recruiting · Summer 2027" glow="50% 38%">
+    <Chapter id="contact" num="5" title="Contact" kicker="Recruiting · Summer 2027" glow="50% 38%">
       <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
         <div>
           <Reveal>

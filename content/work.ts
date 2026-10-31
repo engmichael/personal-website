@@ -7,7 +7,6 @@ export type Stat = { value: string; label: string };
 export type Role = {
   title: string;
   years: string;
-  honors: string[];
   project: {
     client: string;
     focus: string;
@@ -41,7 +40,6 @@ export const experience = {
     {
       title: "Strategy Consultant",
       years: "Jan 2024 — Sept 2026",
-      honors: ["Distinguished Achievement · top 5% of practice", "UT Recruiting Lead"],
       project: {
         // The résumé anonymizes this client as "Leading Autonomous Vehicle
         // Ride-Hail Service"; the site names it, as the previous site did.
@@ -65,10 +63,9 @@ export const experience = {
     {
       title: "Consulting Senior Analyst",
       years: "Nov 2022 — Dec 2023",
-      honors: ["Distinguished Achievement", "Early promotion"],
       project: {
         client: "Splunk & Kinaxis",
-        focus: "Go-to-Market Strategy & Strategic Partnerships",
+        focus: "GTM Strategy & Due Diligence",
         summary:
           "Led GTM strategy for key software and platform clients, co-developing partner activation models, joint value propositions and co-sell playbooks.",
         stats: [
@@ -85,7 +82,6 @@ export const experience = {
     {
       title: "Consulting Analyst",
       years: "Aug 2021 — Oct 2022",
-      honors: ["Analyst PITCH Competition winner · 200+ analysts", "Intern, 2020"],
       project: {
         client: "California EDD",
         focus: "Fraud Strategy & Remediation",

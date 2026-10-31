@@ -17,7 +17,7 @@ export function WorkScene() {
   return (
     <Chapter
       id="experience"
-      num="02"
+      num="2"
       title="Experience"
       kicker={`${experience.employer} ${experience.practice} → Chicago Booth`}
       glow="76% 40%"
@@ -49,21 +49,11 @@ export function WorkScene() {
               <Reveal key={r.title}>
                 <article className="relative pl-8 md:pl-10">
                   <span className="absolute left-0 top-[0.45em] h-2 w-2 -translate-x-1/2 rounded-full bg-accent ring-4 ring-[var(--base)]" />
-                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                    <span className="mono-label" style={{ fontSize: 11 }}>
-                      {r.years}
-                    </span>
-                    <span className="text-sm font-medium text-fg">{r.title}</span>
+                  <div className="mono-label" style={{ fontSize: 11 }}>
+                    {r.years}
                   </div>
-                  {r.honors.length > 0 && (
-                    <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-accent">
-                      {r.honors.map((h) => (
-                        <li key={h}>{h}</li>
-                      ))}
-                    </ul>
-                  )}
 
-                  <h3 className="mt-5 font-display text-lg">
+                  <h3 className="mt-3 font-display text-lg">
                     {r.project.client} <span className="text-fg-subtle">·</span> {r.project.focus}
                   </h3>
                   <p className="mt-3 max-w-prose text-fg-muted">{r.project.summary}</p>

@@ -6,7 +6,7 @@ import { about } from "@/content/about";
 /** Chapter 01 — Who I am. Portrait + quick facts, then the bio. */
 export function AboutScene() {
   return (
-    <Chapter id="about" num="01" title="Who I am" glow="24% 34%">
+    <Chapter id="about" num="1" title="Who I am" glow="24% 34%">
       <div className="grid gap-12 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
         <Reveal>
           <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface">
