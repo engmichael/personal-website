@@ -25,7 +25,7 @@ export const site = {
   resume: null as string | null,
   linkedin: "https://www.linkedin.com/in/eng-michael/",
   instagram: "https://instagram.com/engmichael_",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://experience.michaeleng.me",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://michaeleng.me",
   email: "engmichael@icloud.com",
   socials: [
     { label: "Email", handle: "engmichael@icloud.com", href: "mailto:engmichael@icloud.com" },

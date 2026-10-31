@@ -4,7 +4,7 @@ Running log of decisions, assumptions, and open items.
 
 ## Orientation
 - **Live site is `../v2`** (`michaeleng.me`, static, Netlify, repo `engmichael/personal-website`). `../v1` is the 2023 original. **This build lives in `v3/` and is fully isolated** — the live site is never touched. (The brief calls the new build "v2"; on disk it is `v3`.)
-- **Deploy target** (assumption, confirm at Phase 8): a **separate subdomain**, e.g. `experience.michaeleng.me`, on Vercel. Live site untouched.
+- **Deploy target (confirmed 2026-10-30):** v3 **replaces v2 at `michaeleng.me`**, hosted on **Netlify** from GitHub `engmichael/personal-website` (`main`). Keep the old v2 Netlify site for rollback.
 
 ## Locked decisions (kickoff Q&A)
 1. **Direction:** Active-life story, cinematic — a life in motion; photography woven throughout.
