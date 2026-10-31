@@ -28,8 +28,8 @@ export default function Image() {
         <div style={{ display: "flex" }}>
           Michael&nbsp;<span style={{ color: "#C5A572" }}>Eng.</span>
         </div>
-        <div style={{ fontSize: 40, letterSpacing: -1, color: "#A7A29A", marginTop: 28 }}>
-          Strategy and operations for businesses in motion.
+        <div style={{ display: "flex", fontSize: 40, letterSpacing: -1, color: "#A7A29A", marginTop: 28 }}>
+          In relentless pursuit of&nbsp;<span style={{ color: "#C5A572" }}>growth.</span>
         </div>
       </div>
     ),

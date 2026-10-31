@@ -125,8 +125,7 @@ export function Hero() {
               animate={start || reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
               transition={{ duration: 1, delay: 0.2, ease: [...ease.outExpo] }}
             >
-              Strategy and operations for businesses{" "}
-              <em className="italic text-accent">in motion.</em>
+              In relentless pursuit of <em className="italic text-accent">growth.</em>
             </motion.p>
 
             <motion.div
