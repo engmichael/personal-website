@@ -68,7 +68,7 @@ function OrgBlock({ org, last }: { org: Org; last: boolean }) {
 
       <Reveal className="pl-8 md:pl-0">
         <div className="md:sticky md:top-28">
-          <h3 className="font-display text-xl leading-none">{org.name}</h3>
+          <h3 className="font-display text-xl leading-[1.05]">{org.name}</h3>
           <div className="mt-2 text-fg-muted">{org.meta}</div>
           <div className="mono-label mt-3" style={{ fontSize: 10 }}>
             {org.years}

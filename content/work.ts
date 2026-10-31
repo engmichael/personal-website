@@ -1,7 +1,7 @@
 /* Chapter 1 — Experience. One timeline, newest first: Chicago Booth →
-   Accenture → University of Texas (with its internships). From the résumé
-   (ENG_MICHAEL_RESUME.pdf). Leadership and volunteer work live in
-   `achievements.ts`. */
+   Accenture → UT Austin (with its internships). From the résumé
+   (ENG_MICHAEL_RESUME.pdf), with UT and internship detail from the older
+   master résumé. Leadership and volunteer work live in `achievements.ts`. */
 
 export type Stat = { value: string; label: string };
 
@@ -38,7 +38,7 @@ export type Org = {
 export const experience: Org[] = [
   {
     id: "booth",
-    name: "University of Chicago",
+    name: "The University of Chicago",
     meta: "Chicago, IL",
     years: "2026 — Present",
     entries: [
@@ -131,7 +131,7 @@ export const experience: Org[] = [
   },
   {
     id: "ut",
-    name: "University of Texas",
+    name: "The University of Texas at Austin",
     meta: "Austin, TX",
     years: "2017 — 2021",
     entries: [
@@ -140,11 +140,12 @@ export const experience: Org[] = [
         label: "McCombs School of Business",
         title: "BBA, Finance & MIS · BA, Economics",
         summary:
-          "Minors in Computer Science, Marketing and Educational Psychology. Studied abroad at VŠE Prague.",
-        // More to come from Michael.
+          "Minors in Computer Science, Marketing and Educational Psychology. University Honors. Studied abroad at VŠE Prague.",
         bullets: [
-          "MIS 304 (Python Computing) Teaching Assistant",
-          "Invited to the Deloitte National Leadership Conference",
+          "MIS 304 (Python Computing) Teaching Assistant, supporting 500+ students and leading review lectures for 200+.",
+          "Selected for the Accenture Leadership Program, 1 of 20 from 250+ applicants.",
+          "Invited to the Deloitte National Leadership Conference at Deloitte University.",
+          "Selected for the Goldman Sachs Insight Series.",
         ],
         tags: ["Delta Sigma Pi", "University Securities Investment Team", "Club Volleyball", "Convergent"],
       },
@@ -158,7 +159,9 @@ export const experience: Org[] = [
       {
         kind: "note",
         label: "Summer 2018 · Hong Kong",
-        title: "Dun & Bradstreet",
+        title: "Dun & Bradstreet · Solutions Intern",
+        summary:
+          "Devised a marketing campaign on the value of master data that brought in 80 new leads a week, scripted a Python parser to sort client reports into ETL databases (saving clients $10K), and built API packages to make the company's products easier to use.",
       },
     ],
   },
