@@ -15,7 +15,7 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "flex-end",
           padding: 80,
-          background: "radial-gradient(circle at 80% 20%, #3a2610 0%, #0A0A0B 60%)",
+          background: "radial-gradient(circle at 80% 20%, #2e2414 0%, #0A0A0B 60%)",
           color: "#F4F1EA",
           fontSize: 150,
           lineHeight: 1.02,
@@ -26,7 +26,7 @@ export default function Image() {
           MBA CANDIDATE · CHICAGO BOOTH
         </div>
         <div style={{ display: "flex" }}>
-          Michael&nbsp;<span style={{ color: "#E8A15C" }}>Eng.</span>
+          Michael&nbsp;<span style={{ color: "#C5A572" }}>Eng.</span>
         </div>
         <div style={{ fontSize: 40, letterSpacing: -1, color: "#A7A29A", marginTop: 28 }}>
           Strategy and operations for businesses in motion.

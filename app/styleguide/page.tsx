@@ -16,15 +16,16 @@ const colors = [
   { name: "fg", varName: "--fg", hex: "#F4F1EA" },
   { name: "fg-muted", varName: "--fg-muted", hex: "#A7A29A" },
   { name: "fg-subtle", varName: "--fg-subtle", hex: "#6D685F" },
-  { name: "accent", varName: "--accent", hex: "#E8A15C" },
-  { name: "accent-strong", varName: "--accent-strong", hex: "#F2B478" },
-  { name: "accent-deep", varName: "--accent-deep", hex: "#C9823F" },
+  { name: "accent", varName: "--accent", hex: "#C5A572" },
+  { name: "accent-strong", varName: "--accent-strong", hex: "#D9C193" },
+  { name: "accent-deep", varName: "--accent-deep", hex: "#A3854F" },
 ];
 
-// Accent: keeping amber for now (first). The rest are alternatives kept on
+// Accent: champagne gold (first). The rest are alternatives kept on
 // hand for a future revisit. `on` = text color for a filled button.
 const accents = [
-  { name: "Amber (current)", hex: "#E8A15C", note: "soft tan-gold", on: "#17130C" },
+  { name: "Champagne (current)", hex: "#C5A572", note: "classic, low-saturation gold", on: "#15120C" },
+  { name: "Amber (previous)", hex: "#E8A15C", note: "soft tan-gold", on: "#17130C" },
   { name: "Gold", hex: "#E0A02E", note: "richer, saturated", on: "#17130C" },
   { name: "Ember", hex: "#EA5A2B", note: "warm red-orange", on: "#ffffff" },
   { name: "Cyan", hex: "#22D3EE", note: "cool alt — electric aqua", on: "#05171B" },
@@ -99,7 +100,7 @@ export default function StyleGuide() {
           {/* Accent candidates — awaiting your pick */}
           <div className="mt-14">
             <div className="mono-label mb-4" style={{ color: "var(--accent-strong)" }}>
-              Accent — amber locked for now · alternatives for later
+              Accent — champagne gold · alternatives for later
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {accents.map((a, i) => (

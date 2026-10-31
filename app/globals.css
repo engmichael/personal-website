@@ -167,8 +167,8 @@
   /* Hero background fallback (reduced-motion, touch, and pre-WebGL paint). */
   .hero-gradient {
     background:
-      radial-gradient(55% 45% at 28% 32%, rgba(232, 161, 92, 0.16), transparent 60%),
-      radial-gradient(48% 55% at 78% 68%, rgba(232, 161, 92, 0.09), transparent 55%),
+      radial-gradient(55% 45% at 28% 32%, rgba(197, 165, 114, 0.14), transparent 60%),
+      radial-gradient(48% 55% at 78% 68%, rgba(197, 165, 114, 0.08), transparent 55%),
       radial-gradient(90% 90% at 50% 50%, transparent 42%, rgba(0, 0, 0, 0.4) 100%),
       var(--base);
   }

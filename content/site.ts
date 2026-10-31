@@ -39,7 +39,7 @@ export const site = {
     preloader: true, // once-per-session title sequence
     grain: true, // film-grain overlay
     vignette: true,
-    customCursor: true,
+    customCursor: false, // native cursor — the custom ring read as too much
     webglHero: true, // the WebGL "wow moment" (lazy, static fallback)
     sound: false, // opt-in ambient/SFX — never autoplay
   },

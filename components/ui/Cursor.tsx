@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { useIsTouch } from "@/lib/hooks/useIsTouch";
+import { site } from "@/content/site";
 
 /**
  * A restrained custom cursor: a precise center dot plus a thin ring that softly
@@ -15,7 +16,7 @@ import { useIsTouch } from "@/lib/hooks/useIsTouch";
 export function Cursor() {
   const reduced = useReducedMotion();
   const touch = useIsTouch();
-  const enabled = !reduced && !touch;
+  const enabled = site.flags.customCursor && !reduced && !touch;
 
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);

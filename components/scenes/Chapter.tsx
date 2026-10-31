@@ -24,7 +24,7 @@ export function Chapter({ id, num, title, kicker, children, className, bleed, gl
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
-            background: `radial-gradient(40% 40% at ${glow}, rgba(232,161,92,0.06), transparent 70%)`,
+            background: `radial-gradient(40% 40% at ${glow}, rgba(197,165,114,0.06), transparent 70%)`,
           }}
         />
       )}

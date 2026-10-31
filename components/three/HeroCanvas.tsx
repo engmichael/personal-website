@@ -41,13 +41,13 @@ const fragmentShader = /* glsl */ `
     float f = fbm(p + q * 1.6 + (uMouse - 0.5) * 1.4);
 
     vec3 base = vec3(0.039, 0.039, 0.043);   // #0a0a0b
-    vec3 amber = vec3(0.910, 0.631, 0.361);  // #e8a15c
+    vec3 gold = vec3(0.773, 0.647, 0.447);   // #c5a572
 
     float glow = smoothstep(0.35, 0.95, f);
     float d = distance(uv, uMouse);
     float spot = smoothstep(0.55, 0.0, d) * 0.5; // cursor light
 
-    vec3 col = mix(base, amber, glow * 0.45 + spot * 0.6);
+    vec3 col = mix(base, gold, glow * 0.45 + spot * 0.6);
     col = mix(col, base, 0.15); // keep it premium-dark
     gl_FragColor = vec4(col, 1.0);
   }
@@ -90,7 +90,7 @@ function Field() {
   );
 }
 
-/** Cursor-reactive flowing amber field. Lazy-loaded; render only when allowed. */
+/** Cursor-reactive flowing champagne-gold field. Lazy-loaded; render only when allowed. */
 export function HeroCanvas() {
   return (
     <Canvas

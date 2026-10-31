@@ -10,7 +10,7 @@ import { places } from "@/content/places";
 const W = 1000;
 const H = 500;
 
-/** Equirectangular world map with amber pins for each place. SVG (no rAF), so it
+/** Equirectangular world map with gold pins for each place. SVG (no rAF), so it
  *  renders statically and is fine under reduced-motion. Hover/tap a pin for the note. */
 export function WorldMap() {
   const { landPath, pins } = useMemo(() => {
