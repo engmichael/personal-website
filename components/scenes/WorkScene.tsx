@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { experience, education } from "@/content/work";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
-/** Chapter 02 — Experience. Engagements on a scroll-linked rail, then education. */
+/** Chapter 02 — Experience. Roles on a scroll-linked rail, then earlier roles and education. */
 export function WorkScene() {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -44,44 +44,82 @@ export function WorkScene() {
               aria-hidden
             />
           )}
-          <div className="space-y-16">
-            {experience.engagements.map((e) => (
-              <Reveal key={e.client}>
+          <div className="space-y-20">
+            {experience.roles.map((r) => (
+              <Reveal key={r.title}>
                 <article className="relative pl-8 md:pl-10">
-                  <span className="absolute left-0 top-[0.55em] h-2 w-2 -translate-x-1/2 rounded-full bg-accent ring-4 ring-[var(--base)]" />
-                  <div className="mono-label" style={{ fontSize: 11 }}>
-                    {e.years}
+                  <span className="absolute left-0 top-[0.45em] h-2 w-2 -translate-x-1/2 rounded-full bg-accent ring-4 ring-[var(--base)]" />
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                    <span className="mono-label" style={{ fontSize: 11 }}>
+                      {r.years}
+                    </span>
+                    <span className="text-sm font-medium text-fg">{r.title}</span>
                   </div>
-                  <h3 className="mt-2 font-display text-lg">
-                    {e.client} <span className="text-fg-subtle">·</span> {e.focus}
-                  </h3>
-                  <p className="mt-3 max-w-prose text-fg-muted">{e.summary}</p>
-                  <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-4">
-                    {e.stat && (
-                      <div>
-                        <div className="font-display text-xl leading-none text-accent">
-                          {e.stat.value}
-                        </div>
-                        <div className="mono-label mt-1.5" style={{ fontSize: 10 }}>
-                          {e.stat.label}
-                        </div>
-                      </div>
-                    )}
-                    <ul className="flex flex-wrap gap-2">
-                      {e.highlights.map((h) => (
-                        <li
-                          key={h}
-                          className="rounded-[var(--radius)] border border-border px-2.5 py-1 text-xs text-fg-muted"
-                        >
-                          {h}
-                        </li>
+                  {r.honors.length > 0 && (
+                    <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-accent">
+                      {r.honors.map((h) => (
+                        <li key={h}>{h}</li>
                       ))}
                     </ul>
+                  )}
+
+                  <h3 className="mt-5 font-display text-lg">
+                    {r.project.client} <span className="text-fg-subtle">·</span> {r.project.focus}
+                  </h3>
+                  <p className="mt-3 max-w-prose text-fg-muted">{r.project.summary}</p>
+
+                  <div className="mt-6 flex max-w-2xl flex-wrap gap-x-10 gap-y-5 border-y border-border/60 py-5">
+                    {r.project.stats.map((st) => (
+                      <div key={st.label}>
+                        <div className="font-display text-xl leading-none text-accent">{st.value}</div>
+                        <div className="mono-label mt-2" style={{ fontSize: 10 }}>
+                          {st.label}
+                        </div>
+                      </div>
+                    ))}
                   </div>
+
+                  <ul className="mt-5 max-w-prose space-y-2.5 text-sm text-fg-muted">
+                    {r.project.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="relative pl-5 before:absolute before:left-0 before:top-[0.75em] before:h-px before:w-2.5 before:bg-accent/70"
+                      >
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               </Reveal>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Earlier roles */}
+      <div className="mt-24 grid gap-6 border-t border-border/60 pt-8 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
+        <Reveal>
+          <div className="mono-label" style={{ fontSize: 10 }}>
+            Earlier
+          </div>
+        </Reveal>
+        <div className="divide-y divide-border/60">
+          {experience.earlier.map((e) => (
+            <Reveal key={e.org}>
+              <div className="grid gap-1 py-5 first:pt-0 md:grid-cols-[1fr_auto] md:gap-8">
+                <div>
+                  <div className="font-display text-md">
+                    {e.org} <span className="text-fg-subtle">·</span> {e.title}
+                  </div>
+                  <div className="mt-1 text-sm text-fg-muted">{e.location}</div>
+                  <p className="mt-2 max-w-prose text-sm text-fg-subtle">{e.summary}</p>
+                </div>
+                <div className="mono-label md:text-right" style={{ fontSize: 10 }}>
+                  {e.years}
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
 

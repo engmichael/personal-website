@@ -80,7 +80,7 @@ export function Hero() {
           animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <span className="mono-label">MBA Candidate · Chicago Booth</span>
+          <span className="mono-label">MBA/MPCS Candidate · Chicago Booth</span>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-base/40 px-3 py-1 text-xs text-fg-muted backdrop-blur">
             <span className="relative flex h-1.5 w-1.5">
               {!reduced && (
@@ -122,8 +122,9 @@ export function Hero() {
               <em className="italic text-accent">in motion.</em>
             </p>
             <p className="mt-4 max-w-[56ch] text-fg-muted">
-              Most recently at Accenture, where I helped scale Waymo&apos;s autonomous fleet
-              from 20 vehicles to 500+. Now an MBA candidate at Chicago Booth.
+              Most recently a Strategy Consultant at Accenture, where I helped scale Waymo&apos;s
+              autonomous fleet from 20 vehicles to 500. Now pursuing a joint MBA and MS in
+              Computer Science at Chicago Booth.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">

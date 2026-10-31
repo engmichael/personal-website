@@ -15,7 +15,7 @@ type Props = {
   arrow?: boolean;
   cursorLabel?: string;
   className?: string;
-  /** Open http(s) links in a new tab. */
+  /** Open in a new tab (external sites, the résumé PDF). */
   external?: boolean;
 };
 
@@ -87,9 +87,7 @@ export function Button({
       <motion.a
         href={href}
         onClick={onClick}
-        {...(external && href.startsWith("http")
-          ? { target: "_blank", rel: "noopener noreferrer" }
-          : {})}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         {...common}
       >
         {content}

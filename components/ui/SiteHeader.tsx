@@ -65,8 +65,8 @@ export function SiteHeader() {
           ))}
           <a
             href={site.resume ?? site.linkedin}
-            target={site.resume ? undefined : "_blank"}
-            rel={site.resume ? undefined : "noopener noreferrer"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="link-underline hidden hover:text-fg sm:inline-block"
             data-cursor
           >

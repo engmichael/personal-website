@@ -20,9 +20,8 @@ export const site = {
     badge: "Recruiting · Summer 2027",
     sentence: "I'm recruiting for Summer 2027 strategy consulting internships",
   },
-  // Drop a current PDF at public/resume.pdf and set this to "/resume.pdf".
-  // While null, résumé buttons fall back to LinkedIn.
-  resume: null as string | null,
+  // Current résumé (public/Michael-Eng-Resume.pdf). Set to null to fall back to LinkedIn.
+  resume: "/Michael-Eng-Resume.pdf" as string | null,
   linkedin: "https://www.linkedin.com/in/eng-michael/",
   instagram: "https://instagram.com/engmichael_",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://michaeleng.me",

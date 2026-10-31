@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: { default: `${site.name} — Strategy & Operations · Chicago Booth MBA`, template: `%s — ${site.name}` },
   description:
-    "Michael Eng is an MBA candidate at Chicago Booth with a background in strategy and operations at Accenture, where he helped scale Waymo's autonomous fleet from 20 to 500+ vehicles.",
+    "Michael Eng is a joint MBA and MS in Computer Science candidate at Chicago Booth. Previously a Strategy Consultant at Accenture, where he helped scale Waymo's autonomous fleet from 20 to 500 vehicles.",
   metadataBase: new URL(site.url),
   alternates: { canonical: "/" },
   openGraph: {

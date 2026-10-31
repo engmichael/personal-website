@@ -1,13 +1,28 @@
-/* Chapter 02 — Experience. Professional history + education. Leadership and
-   volunteer work live in `achievements.ts`. */
+/* Chapter 02 — Experience. Professional history + education, from the résumé
+   (ENG_MICHAEL_RESUME.pdf). Leadership and volunteer work live in
+   `achievements.ts`. */
 
-export type Engagement = {
+export type Stat = { value: string; label: string };
+
+export type Role = {
+  title: string;
   years: string;
-  client: string;
-  focus: string;
+  honors: string[];
+  project: {
+    client: string;
+    focus: string;
+    summary: string;
+    stats: Stat[];
+    bullets: string[];
+  };
+};
+
+export type EarlierRole = {
+  org: string;
+  title: string;
+  location: string;
+  years: string;
   summary: string;
-  highlights: string[];
-  stat?: { value: string; label: string };
 };
 
 export type Education = {
@@ -21,39 +36,96 @@ export const experience = {
   employer: "Accenture",
   practice: "Strategy",
   location: "New York",
-  years: "2022 — 2026",
-  engagements: [
+  years: "2021 — 2026",
+  roles: [
     {
-      years: "2024 — 2026",
-      client: "Waymo",
-      focus: "Operations & Partnerships",
-      summary:
-        "Helped scale autonomous fleet operations from 20 vehicles to 500+, across new markets in the U.S. and abroad.",
-      highlights: ["Strategy", "Operations transformation", "Partnership design"],
-      stat: { value: "20 → 500+", label: "vehicles in the fleet" },
+      title: "Strategy Consultant",
+      years: "Jan 2024 — Sept 2026",
+      honors: ["Distinguished Achievement · top 5% of practice", "UT Recruiting Lead"],
+      project: {
+        // The résumé anonymizes this client as "Leading Autonomous Vehicle
+        // Ride-Hail Service"; the site names it, as the previous site did.
+        client: "Waymo",
+        focus: "Ops Transformation & Partnership Strategy",
+        summary:
+          "Delivered a three-year transformation roadmap to close critical process gaps, enable vendor partnerships and expand the ride-hail service.",
+        stats: [
+          { value: "20 → 500", label: "vehicles in California" },
+          { value: "70% → 85%", label: "peak fleet availability" },
+          { value: "16 → 5 mo", label: "time to launch a market" },
+        ],
+        bullets: [
+          "Scaled California operations from 20 vehicles to a fleet of 500 serving 30,000+ weekly trips, contributing to $2.5B in VC funding.",
+          "Redesigned depot and charging workflows, the source of 65% of vehicle downtime, lifting peak-hour availability from ~70% to 85%.",
+          "Mobilized expansion into 7 new markets (3 international) with a repeatable launch playbook for depots, staffing and shipping.",
+          "Assessed operational maturity across six core functions and prioritized quick wins worth $8M+ in savings.",
+        ],
+      },
     },
     {
-      years: "2022 — 2024",
-      client: "Splunk & Kinaxis",
-      focus: "Go-to-Market",
-      summary:
-        "Partner activation, joint value propositions, and co-sell motions for two enterprise software platforms.",
-      highlights: ["Partner activation", "Value propositions", "Co-sell"],
+      title: "Consulting Senior Analyst",
+      years: "Nov 2022 — Dec 2023",
+      honors: ["Distinguished Achievement", "Early promotion"],
+      project: {
+        client: "Splunk & Kinaxis",
+        focus: "Go-to-Market Strategy & Strategic Partnerships",
+        summary:
+          "Led GTM strategy for key software and platform clients, co-developing partner activation models, joint value propositions and co-sell playbooks.",
+        stats: [
+          { value: "$80M+", label: "license & service sales" },
+          { value: "+23%", label: "win rate" },
+          { value: "+15%", label: "average deal size" },
+        ],
+        bullets: [
+          "Segmented 115+ accounts, refocusing co-sell on life sciences, high tech and industrials and rolling out joint offerings across 20+ delivery teams.",
+          "Secured $35M+ in investments by running innovation workshops and building narratives for CEO, CFO and COO audiences.",
+        ],
+      },
     },
-  ] satisfies Engagement[],
+    {
+      title: "Consulting Analyst",
+      years: "Aug 2021 — Oct 2022",
+      honors: ["Analyst PITCH Competition winner · 200+ analysts", "Intern, 2020"],
+      project: {
+        client: "California EDD",
+        focus: "Fraud Strategy & Remediation",
+        summary:
+          "Designed analytical frameworks to identify coordinated fraud networks in the state's unemployment system.",
+        stats: [
+          { value: "$135M+", label: "fraudulent claims reclaimed" },
+          { value: "20K+", label: "suspicious claims flagged" },
+          { value: "−45%", label: "manual claim review" },
+        ],
+        bullets: [
+          "Converted fraud-network findings into 85 detection rules.",
+          "Synthesized the analysis into legislative briefing materials for Governor Newsom on the state's fraud response.",
+        ],
+      },
+    },
+  ] satisfies Role[],
+  earlier: [
+    {
+      org: "PwC",
+      title: "Financial Markets Intern",
+      location: "Dallas",
+      years: "Summer 2019",
+      summary:
+        "Ran right-of-use asset impairment valuations for 500+ retail properties across $250M+ in real estate deals, built purchase price allocations for a $90M deal, and advised asset managers on the LIBOR transition.",
+    },
+  ] satisfies EarlierRole[],
 };
 
 export const education: Education[] = [
   {
     years: "2026 — 2028",
     school: "The University of Chicago Booth School of Business",
-    degree: "MBA / MPCS",
+    degree: "MBA & MS in Computer Science · Joint degree",
+    note: "Concentrations in Strategic Management, Finance and International Business.",
   },
   {
-    years: "2018 — 2021",
+    years: "2017 — 2021",
     school: "The University of Texas at Austin",
-    // CONFIRM: list the three majors here.
-    degree: "Undergraduate · three majors",
-    note: "Convergent build team: designed an NLP-driven platform giving students access to back-end university resources.",
+    degree: "BBA, Finance & MIS · BA, Economics",
+    note: "Minors in Computer Science, Marketing and Educational Psychology. Studied abroad at VŠE Prague; interned abroad with Dun & Bradstreet in Hong Kong. Delta Sigma Pi, University Securities Investment Team, Club Volleyball, Convergent.",
   },
 ];

@@ -33,6 +33,7 @@ export function OffTheClockScene() {
               </span>
             ))}
           </div>
+          <p className="mt-5 max-w-prose text-sm text-fg-subtle">{offTheClock.licensed}</p>
         </Reveal>
       </div>
 

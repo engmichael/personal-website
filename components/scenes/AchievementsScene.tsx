@@ -6,7 +6,7 @@ import { achievements, boothGroups } from "@/content/achievements";
 export function AchievementsScene() {
   return (
     <Chapter id="leadership" num="03" title="Leadership & impact" kicker="Built, led, raised" glow="28% 55%">
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {achievements.map((a, i) => (
           <Reveal key={a.title} delay={0.08 * i}>
             <div className="flex h-full flex-col justify-between rounded-[var(--radius-lg)] border border-border bg-surface/40 p-7 transition-colors duration-500 hover:border-accent/50">

@@ -7,6 +7,7 @@ export const about = {
     { label: "Currently", value: "MBA/MPCS @ Chicago Booth" },
     { label: "Previously", value: "Strategy @ Accenture, NYC" },
     { label: "From", value: "Plano, Texas" },
+    { label: "Languages", value: "Cantonese (fluent), Mandarin (conversational)" },
   ],
   lead: "I am, on most days, a person trying to be in three places at once.",
   body: [
