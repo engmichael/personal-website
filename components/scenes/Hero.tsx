@@ -9,6 +9,7 @@ import { useIsTouch } from "@/lib/hooks/useIsTouch";
 import { ease } from "@/lib/motion/tokens";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils/cn";
+import { WuBrush } from "@/components/ui/WuBrush";
 
 // Heavy: Three/R3F are code-split and only fetched when we actually render this.
 const HeroCanvas = dynamic(
@@ -72,6 +73,17 @@ export function Hero() {
             "linear-gradient(90deg, rgba(10,10,11,0.72) 0%, rgba(10,10,11,0.36) 45%, transparent 78%)",
         }}
       />
+
+      {/* The 吳 mark, drawn stroke by stroke once the page is ready (md+). */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
+        <div className="shell relative h-full">
+          <WuBrush
+            start={start}
+            delay={0.55}
+            className="absolute right-[var(--gutter)] top-[15%] h-[44%] w-auto text-fg/90"
+          />
+        </div>
+      </div>
 
       <div className="shell pt-24 pb-8">
         <motion.div
