@@ -23,6 +23,7 @@ export type Note = {
   label: string;
   title?: string;
   summary?: string;
+  bullets?: string[];
   tags?: string[];
 };
 
@@ -37,15 +38,17 @@ export type Org = {
 export const experience: Org[] = [
   {
     id: "booth",
-    name: "Chicago Booth",
+    name: "University of Chicago",
     meta: "Chicago, IL",
-    years: "2026 — 2028",
+    years: "2026 — Present",
     entries: [
       {
         kind: "note",
-        label: "Joint degree",
-        title: "MBA & MS in Computer Science",
+        label: "Chicago Booth School of Business",
+        title: "MBA · MS in Computer Science",
         summary: "Concentrations in Strategic Management, Finance and International Business.",
+        // Names only for now; details to come from Michael.
+        bullets: ["Tarrson Fund", "Golub Board Fellows"],
       },
       {
         kind: "note",
@@ -134,10 +137,15 @@ export const experience: Org[] = [
     entries: [
       {
         kind: "note",
-        label: "Undergraduate",
+        label: "McCombs School of Business",
         title: "BBA, Finance & MIS · BA, Economics",
         summary:
           "Minors in Computer Science, Marketing and Educational Psychology. Studied abroad at VŠE Prague.",
+        // More to come from Michael.
+        bullets: [
+          "MIS 304 (Python Computing) Teaching Assistant",
+          "Invited to the Deloitte National Leadership Conference",
+        ],
         tags: ["Delta Sigma Pi", "University Securities Investment Team", "Club Volleyball", "Convergent"],
       },
       {
@@ -149,7 +157,7 @@ export const experience: Org[] = [
       },
       {
         kind: "note",
-        label: "Internship abroad · Hong Kong",
+        label: "Summer 2018 · Hong Kong",
         title: "Dun & Bradstreet",
       },
     ],

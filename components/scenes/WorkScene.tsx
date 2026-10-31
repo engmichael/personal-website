@@ -117,16 +117,7 @@ function ProjectEntry({ p }: { p: Project }) {
         ))}
       </div>
 
-      <ul className="mt-5 max-w-prose space-y-2.5 text-sm text-fg-muted">
-        {p.bullets.map((b) => (
-          <li
-            key={b}
-            className="relative pl-5 before:absolute before:left-0 before:top-[0.75em] before:h-px before:w-2.5 before:bg-accent/70"
-          >
-            {b}
-          </li>
-        ))}
-      </ul>
+      <Bullets items={p.bullets} />
     </>
   );
 }
@@ -139,6 +130,7 @@ function NoteEntry({ n }: { n: Note }) {
       </div>
       {n.title && <h4 className="mt-3 font-display text-lg">{n.title}</h4>}
       {n.summary && <p className="mt-3 max-w-prose text-fg-muted">{n.summary}</p>}
+      {n.bullets && <Bullets items={n.bullets} />}
       {n.tags && (
         <ul className="mt-4 flex max-w-2xl flex-wrap gap-2">
           {n.tags.map((t) => (
@@ -152,5 +144,20 @@ function NoteEntry({ n }: { n: Note }) {
         </ul>
       )}
     </>
+  );
+}
+
+function Bullets({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-5 max-w-prose space-y-2.5 text-sm text-fg-muted">
+      {items.map((b) => (
+        <li
+          key={b}
+          className="relative pl-5 before:absolute before:left-0 before:top-[0.75em] before:h-px before:w-2.5 before:bg-accent/70"
+        >
+          {b}
+        </li>
+      ))}
+    </ul>
   );
 }
