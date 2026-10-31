@@ -41,6 +41,7 @@ export const site = {
     vignette: true,
     customCursor: false, // native cursor — the custom ring read as too much
     webglHero: true, // the WebGL "wow moment" (lazy, static fallback)
+    brushMark: false, // 吳 drawn stroke by stroke in the hero (components/ui/WuBrush) — parked for now
     sound: false, // opt-in ambient/SFX — never autoplay
   },
 } as const;
