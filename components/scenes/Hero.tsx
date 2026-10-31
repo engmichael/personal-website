@@ -21,8 +21,8 @@ const nameParts = ["Michael", "Eng"];
 const facts: { label: string; value: string; href?: string }[] = [
   { label: "Now", value: "MBA/MPCS @ Chicago Booth" },
   { label: "Previously", value: "Strategy @ Accenture" },
-  { label: "Focus", value: "Strategy · Ops · Partnerships" },
-  { label: "Off the clock", value: "Photography · Travel · Food", href: "#off-the-clock" },
+  { label: "Focus", value: "Strategy · Partnerships · Education" },
+  { label: "Off the Clock", value: "Travel · Food · Photography", href: "#off-the-clock" },
 ];
 
 export function Hero() {

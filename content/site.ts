@@ -12,12 +12,12 @@ export const site = {
   name: "Michael Eng",
   shortName: "Michael",
   // Recruiter-first: what I do leads; photography, travel and food are framed
-  // as the life around it (see the "Off the clock" chapter).
+  // as the life around it (see the "Off the Clock" chapter).
   role: "Strategy & Operations · MBA Candidate, Chicago Booth",
   tagline: "A life in motion.",
   // Shown in the hero badge, the Contact kicker, and the Contact copy.
   seeking: {
-    badge: "Recruiting · Summer 2027 strategy consulting",
+    badge: "Recruiting · Summer 2027",
     sentence: "I'm recruiting for Summer 2027 strategy consulting internships",
   },
   // Drop a current PDF at public/resume.pdf and set this to "/resume.pdf".

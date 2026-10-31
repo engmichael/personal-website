@@ -9,7 +9,7 @@ export function Food() {
   return (
     <div id="food">
       <BlockHeader
-        numeral="04.3"
+        numeral="4.2"
         title={block.title}
         lede={block.lede}
         aside={

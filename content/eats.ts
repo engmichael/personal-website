@@ -1,4 +1,4 @@
-/* Off the clock — Food. NYC restaurant guide, ported from the live site.
+/* Off the Clock — Food. NYC restaurant guide, ported from the live site.
    The first three `featured` entries are shown with notes.
    `featured[].body` may contain inline <em> and is rendered as HTML. */
 

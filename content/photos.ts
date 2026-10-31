@@ -1,4 +1,4 @@
-/* Off the clock — Photography. Real frames only; width/height are the
+/* Off the Clock — Photography. Real frames only; width/height are the
    original pixel dimensions. `tall` spans two rows in the desktop grid. */
 
 export type Photo = {

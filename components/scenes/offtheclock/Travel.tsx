@@ -21,7 +21,7 @@ export function Travel() {
   return (
     <div id="travel">
       <BlockHeader
-        numeral="04.2"
+        numeral="4.1"
         title={block.title}
         lede={block.lede}
         aside={<span className="mono-label">{places.length} places</span>}

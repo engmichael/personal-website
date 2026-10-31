@@ -1,4 +1,4 @@
-/* Off the clock — Travel. Cities Michael has spent time in; lng/lat are real
+/* Off the Clock — Travel. Cities Michael has spent time in; lng/lat are real
    coordinates, projected onto the world map. Ported from the live site. */
 
 export type Place = {

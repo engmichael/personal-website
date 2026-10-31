@@ -5,10 +5,10 @@ import { Travel } from "./offtheclock/Travel";
 import { Food } from "./offtheclock/Food";
 import { offTheClock } from "@/content/offtheclock";
 
-/** Chapter 04 — Off the clock. Photography, travel and food as one set of hobbies. */
+/** Chapter 04 — Off the Clock. Travel, food and photography as one set of hobbies. */
 export function OffTheClockScene() {
   return (
-    <Chapter id="off-the-clock" num="04" title="Off the clock" kicker={offTheClock.label} glow="70% 30%">
+    <Chapter id="off-the-clock" num="04" title="Off the Clock" kicker={offTheClock.label} glow="70% 30%">
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
         <Reveal>
           <div className="mono-label" style={{ fontSize: 10 }}>
@@ -37,9 +37,9 @@ export function OffTheClockScene() {
       </div>
 
       <div className="mt-24 space-y-28">
-        <Photography />
         <Travel />
         <Food />
+        <Photography />
       </div>
     </Chapter>
   );
