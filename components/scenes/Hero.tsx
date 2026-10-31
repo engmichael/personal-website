@@ -142,11 +142,9 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap items-end justify-between gap-x-10 gap-y-7">
               <div>
-                <Signature start={start || reduced} delay={0.9} className="text-[3.4rem] text-fg/90 md:text-[4rem]">
-                  {letter.signoff.name}
-                </Signature>
+                <Signature start={start || reduced} delay={0.9} className="w-[12.5rem] text-fg/90 md:w-[15rem]" />
                 <motion.div
-                  className="mt-3 border-t border-border/70 pt-3"
+                  className="mt-3"
                   initial={reduced ? false : { opacity: 0 }}
                   animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.8, delay: 1.5 }}

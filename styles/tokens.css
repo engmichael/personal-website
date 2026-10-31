@@ -31,7 +31,6 @@
   /* ---- Type families (bound to next/font vars in app/layout.tsx) ---- */
   --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-signature: var(--font-signature-face), cursive;
   /* No monospace — labels are spaced small capitals in the sans. */
   --font-mono: var(--font-sans);
 
