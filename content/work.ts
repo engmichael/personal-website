@@ -118,8 +118,8 @@ export const experience: Org[] = [
         summary:
           "Designed analytical frameworks to identify coordinated fraud networks in the state's unemployment system.",
         stats: [
-          { value: "$135M+", label: "fraudulent claims reclaimed" },
-          { value: "20K+", label: "suspicious claims flagged" },
+          { value: "$135M+", label: "fraud recovered" },
+          { value: "20K+", label: "claims flagged" },
           { value: "−45%", label: "manual claim review" },
         ],
         bullets: [
