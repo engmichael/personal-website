@@ -151,6 +151,15 @@ export const experience: Org[] = [
       },
       {
         kind: "note",
+        label: "Summer 2020 · Dallas",
+        title: "Accenture · Consulting Summer Analyst",
+        // The master résumé puts the EDD work here; the $135M+ result stays on
+        // the full-time EDD entry above rather than appearing twice.
+        summary:
+          "Started on fraud strategy for the California EDD, then rejoined the engagement full-time after graduating.",
+      },
+      {
+        kind: "note",
         label: "Summer 2019 · Dallas",
         title: "PwC · Financial Markets Intern",
         summary:
