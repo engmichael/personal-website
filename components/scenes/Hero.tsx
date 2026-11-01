@@ -27,7 +27,7 @@ const HeroCanvas = dynamic(
 const facts: { label: string; value: string; href?: string; live?: boolean }[] = [
   { label: "Currently", value: site.seeking.badge, href: "#contact", live: true },
   { label: "Previously", value: "Strategy @ Accenture" },
-  { label: "Focus", value: "Strategy · Partnerships · Education" },
+  { label: "Focus", value: "GTM · Partnerships · Education" },
   { label: "Off the Clock", value: "Travel · Food · Photography", href: "#off-the-clock" },
 ];
 
