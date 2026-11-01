@@ -142,7 +142,7 @@ export const experience: Org[] = [
         summary:
           "Minors in Computer Science, Marketing and Educational Psychology. University Honors. Studied abroad at VŠE Prague.",
         bullets: [
-          "Co-founded Texas Consulting, a student-led pro-bono consulting organization serving global nonprofits and Fortune 500 companies; as President, attracted 350+ students in its first two years and led projects for the American Heart Association and Zeta Charter Schools.",
+          "Co-founded Texas Consulting, a student-led pro-bono consulting organization serving global nonprofits and Fortune 500 companies.",
           "MIS 304 (Python Computing) Teaching Assistant, supporting 500+ students and leading review lectures for 200+.",
           "Selected for the Accenture Leadership Program, 1 of 20 from 250+ applicants.",
           "Invited to the Deloitte National Leadership Conference at Deloitte University.",
