@@ -155,7 +155,7 @@ export const experience: Org[] = [
         title: "Accenture · Consulting Summer Analyst",
         // USAA, per Michael; the master résumé wrongly lists the EDD work here.
         summary:
-          "Worked on USAA's Enterprise Technology Reinvention, analyzing 86 platform features and system performance to pinpoint critical gaps and deliver high-impact enhancements to the core platform.",
+          "Reinvented USAA's enterprise technology through an agile framework, analyzing 86 platform features and system performance to pinpoint critical gaps and deliver high-impact enhancements to the core platform.",
       },
       {
         kind: "note",
