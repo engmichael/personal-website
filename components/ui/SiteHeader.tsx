@@ -7,10 +7,11 @@ import { motion } from "motion/react";
 import { site } from "@/content/site";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { ease } from "@/lib/motion/tokens";
+import { SeekingBadge } from "./SeekingBadge";
 
 /**
  * Minimal persistent chrome: the 吳 mark, a hairline divider and the name (→ home),
- * section links, résumé, contact. Hides on
+ * section links, the recruiting pill (xl+), résumé, contact. Hides on
  * scroll-down and returns on scroll-up. Always visible under reduced-motion.
  */
 const links = [
@@ -63,6 +64,7 @@ export function SiteHeader() {
               {l.label}
             </a>
           ))}
+          <SeekingBadge className="hidden xl:inline-flex" />
           <a
             href={site.resume ?? site.linkedin}
             target="_blank"

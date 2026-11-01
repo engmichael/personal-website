@@ -10,6 +10,7 @@ import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { useIsTouch } from "@/lib/hooks/useIsTouch";
 import { ease } from "@/lib/motion/tokens";
 import { Button } from "@/components/ui/Button";
+import { SeekingBadge } from "@/components/ui/SeekingBadge";
 import { Signature } from "@/components/ui/Signature";
 import { cn } from "@/lib/utils/cn";
 
@@ -108,15 +109,8 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span className="mono-label">By Way of Introduction</span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-base/40 px-3 py-1 text-xs text-fg-muted backdrop-blur">
-                <span className="relative flex h-1.5 w-1.5">
-                  {!reduced && (
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-                  )}
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-                </span>
-                {site.seeking.badge}
-              </span>
+              {/* The pill lives in the nav from xl; below that the nav has no room, so it stays here. */}
+              <SeekingBadge className="xl:hidden" />
             </motion.div>
 
             <motion.p
