@@ -107,7 +107,7 @@ export function Hero() {
               animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <span className="mono-label">MBA/MPCS Candidate · Chicago Booth</span>
+              <span className="mono-label">A Quick Introduction</span>
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-base/40 px-3 py-1 text-xs text-fg-muted backdrop-blur">
                 <span className="relative flex h-1.5 w-1.5">
                   {!reduced && (
