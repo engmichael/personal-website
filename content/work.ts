@@ -153,10 +153,9 @@ export const experience: Org[] = [
         kind: "note",
         label: "Summer 2020 · Dallas",
         title: "Accenture · Consulting Summer Analyst",
-        // The master résumé puts the EDD work here; the $135M+ result stays on
-        // the full-time EDD entry above rather than appearing twice.
+        // USAA, per Michael; the master résumé wrongly lists the EDD work here.
         summary:
-          "Started on fraud strategy for the California EDD, then rejoined the engagement full-time after graduating.",
+          "Worked on USAA's Enterprise Technology Reinvention, analyzing 86 platform features and system performance to pinpoint critical gaps and deliver high-impact enhancements to the core platform.",
       },
       {
         kind: "note",

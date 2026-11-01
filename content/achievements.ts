@@ -34,7 +34,7 @@ export const achievements: Achievement[] = [
     title: "Speech & Debate",
     role: "Coach · Plano West Senior High",
     when: "Public Forum · Policy",
-    desc: "Mentors students in Public Forum and Policy Debate each year — part of a broader commitment to expanding educational access.",
+    desc: "Competed in Public Forum at Plano West, winning 3 tournaments, finaling at state twice and qualifying for nationals. Now coaches the team's Public Forum and Policy debaters.",
   },
   {
     stat: "$5.5K",
