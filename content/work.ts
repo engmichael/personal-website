@@ -65,8 +65,8 @@ export const experience: Org[] = [
   },
   {
     id: "accenture",
-    name: "Accenture",
-    meta: "Strategy · New York",
+    name: "Strategy @ Accenture",
+    meta: "New York, NY",
     years: "2021 — 2026",
     entries: [
       {
