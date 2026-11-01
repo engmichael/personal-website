@@ -10,7 +10,6 @@ import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { useIsTouch } from "@/lib/hooks/useIsTouch";
 import { ease } from "@/lib/motion/tokens";
 import { Button } from "@/components/ui/Button";
-import { SeekingBadge } from "@/components/ui/SeekingBadge";
 import { Signature } from "@/components/ui/Signature";
 import { cn } from "@/lib/utils/cn";
 
@@ -25,7 +24,8 @@ const HeroCanvas = dynamic(
   { ssr: false },
 );
 
-const facts: { label: string; value: string; href?: string }[] = [
+const facts: { label: string; value: string; href?: string; live?: boolean }[] = [
+  { label: "Currently", value: site.seeking.badge, href: "#contact", live: true },
   { label: "Previously", value: "Strategy @ Accenture" },
   { label: "Focus", value: "Strategy · Partnerships · Education" },
   { label: "Off the Clock", value: "Travel · Food · Photography", href: "#off-the-clock" },
@@ -103,14 +103,12 @@ export function Hero() {
         <div className="grid w-full gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:items-center md:gap-16">
           <div>
             <motion.div
-              className="mb-7 flex flex-wrap items-center gap-x-6 gap-y-3"
+              className="mb-7"
               initial={reduced ? false : { opacity: 0 }}
               animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span className="mono-label">By Way of Introduction</span>
-              {/* The pill lives in the nav from xl; below that the nav has no room, so it stays here. */}
-              <SeekingBadge className="xl:hidden" />
             </motion.div>
 
             <motion.p
@@ -190,14 +188,14 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Fact strip — the at-a-glance read. Hobbies are named as hobbies. */}
+      {/* Fact strip — the at-a-glance read, led by the recruiting status. Hobbies are named as hobbies. */}
       <motion.div
         className="shell pb-8"
         initial={reduced ? false : { opacity: 0 }}
         animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
-        <dl className="grid grid-cols-2 border-t border-border/70 md:grid-cols-3">
+        <dl className="grid grid-cols-2 border-t border-border/70 md:grid-cols-4">
           {facts.map((f, i) => (
             <div
               key={f.label}
@@ -210,7 +208,16 @@ export function Hero() {
               <dt className="mono-label" style={{ fontSize: 10 }}>
                 {f.label}
               </dt>
-              <dd className="mt-1.5 text-sm text-fg">
+              <dd className={cn("mt-1.5 text-sm text-fg", f.live && "flex items-start gap-2")}>
+                {f.live && (
+                  // Centred on the first line, so it stays put when the value wraps on phones.
+                  <span className="relative mt-[0.5em] flex h-1.5 w-1.5 shrink-0" aria-hidden>
+                    {!reduced && (
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                    )}
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+                  </span>
+                )}
                 {f.href ? (
                   <a href={f.href} className="link-underline" data-cursor>
                     {f.value}
