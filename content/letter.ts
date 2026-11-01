@@ -4,9 +4,9 @@
 export const letter = {
   portrait: { src: "/media/portrait.jpg", alt: "Portrait of Michael Eng" },
   body: [
-    "For five years I worked at Accenture helping software & platform executives create go-to-market strategies, transform business operations, and expand into international markets. Now I'm pursuing a joint MBA/MPCS degree at Chicago Booth.",
-    // Four lines each at 1440×900; any longer and the fact strip drops below the fold.
-    "Curiosity has shaped most of my life. I'm always chasing adventure and something new to learn, like a new license every year, from scuba diving to officiating weddings. I'm most passionate about expanding access to education, which is why I help education nonprofits grow.",
+    "For five years I worked at Accenture helping software & platform executives create go-to-market strategies, transform operations, and expand into international markets. Now I'm pursuing an MBA at Chicago Booth while also getting a degree in Computer Science.",
+    // At most four lines each at 1440×900; any longer and the fact strip drops below the fold.
+    "Curiosity has shaped most of my life. I'm always chasing adventure and the feeling of learning something new. I'm most passionate about expanding access to education globally, which I support through nonprofit work and advocacy.",
   ],
   signoff: { name: "Michael Eng", title: "MBA/MPCS Candidate, Chicago Booth" },
 };
