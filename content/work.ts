@@ -180,7 +180,7 @@ export const experience: Org[] = [
         label: "Summer 2018 · Hong Kong",
         title: "Dun & Bradstreet · Solutions Intern",
         summary:
-          "Designed the data architecture for a large national bank running on legacy systems, scripted a Python parser and API package to sort client reports into ETL databases (saving clients $10K), and devised a master data marketing campaign that earned 80 new leads a week.",
+          "Designed the data architecture for a large national bank on legacy systems and scripted a Python parser to sort client reports into ETL databases (saving $10K), while also devising a master data campaign that earned 80 leads/week.",
       },
     ],
   },
