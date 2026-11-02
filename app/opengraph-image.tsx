@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Michael Eng — Strategy & Operations, MBA Candidate at Chicago Booth";
+export const alt = "Michael Eng — MBA Candidate at Chicago Booth";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

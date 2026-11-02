@@ -11,7 +11,7 @@ export type SocialLink = {
 export const site = {
   name: "Michael Eng",
   shortName: "Michael",
-  // Shown on the loading screen above the name. Photography, travel and food
+  // Shown on the loading screen and in the page title. Photography, travel and food
   // are framed as the life around the work (see the "Off the Clock" chapter).
   role: "MBA Candidate @ Chicago Booth",
   tagline: "A life in motion.",

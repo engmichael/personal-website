@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: { default: `${site.name} — Strategy & Operations · Chicago Booth MBA`, template: `%s — ${site.name}` },
+  title: { default: `${site.name} — ${site.role}`, template: `%s — ${site.name}` },
   description:
     "Michael Eng is a joint MBA and MS in Computer Science candidate at Chicago Booth. Previously a Strategy Consultant at Accenture, where he helped scale Waymo's autonomous fleet from 20 to 500 vehicles.",
   metadataBase: new URL(site.url),
@@ -29,8 +29,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — Strategy & Operations · Chicago Booth MBA`,
-    description: "MBA candidate at Chicago Booth. Strategy and operations, previously at Accenture.",
+    title: `${site.name} — ${site.role}`,
+    description:
+      "MBA candidate at Chicago Booth, previously in strategy at Accenture. Recruiting for Summer 2027 strategy consulting internships.",
     url: "/",
   },
   twitter: { card: "summary_large_image" },
