@@ -102,15 +102,6 @@ export function Hero() {
         <h1 className="sr-only">{site.name}</h1>
         <div className="grid w-full gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:items-center md:gap-16">
           <div>
-            <motion.div
-              className="mb-7"
-              initial={reduced ? false : { opacity: 0 }}
-              animate={start || reduced ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <span className="mono-label">By Way of Introduction</span>
-            </motion.div>
-
             <motion.p
               className="max-w-[22ch] font-display text-[clamp(2.1rem,1.4rem+2.1vw,3.4rem)] leading-[1.04]"
               initial={reduced ? false : { opacity: 0, y: 24 }}
