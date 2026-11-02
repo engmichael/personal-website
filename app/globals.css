@@ -292,6 +292,33 @@
   .m-route .end {
     fill: var(--accent);
   }
+
+  /* orbits — a life in motion; turns on its own, no hover needed */
+  .m-orbits .track {
+    fill: none;
+    stroke: color-mix(in oklab, var(--fg) 12%, transparent);
+    stroke-width: 1;
+  }
+  .m-orbits .sun,
+  .m-orbits .trail,
+  .m-orbits .body {
+    fill: var(--accent);
+  }
+  .m-orbits .halo {
+    fill: none;
+    stroke: var(--accent);
+    stroke-opacity: 0.3;
+  }
+  .m-orbits .orbit {
+    transform-origin: 150px 150px;
+    animation: orbit-spin var(--t) linear infinite;
+  }
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes route-draw {
