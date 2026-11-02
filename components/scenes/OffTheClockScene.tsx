@@ -37,7 +37,7 @@ export function OffTheClockScene() {
           <div className="mt-6 space-y-5">
             <ChipRow label="Hobbies" items={offTheClock.hobbies} />
             <ChipRow label="Interests" items={offTheClock.interests} />
-            <ChipRow label="Licenses" items={offTheClock.licenses} />
+            <ChipRow label="Licenses" items={offTheClock.licenses} note={offTheClock.licensesNote} />
           </div>
         </Reveal>
       </div>
@@ -51,20 +51,23 @@ export function OffTheClockScene() {
   );
 }
 
-function ChipRow({ label, items }: { label: string; items: string[] }) {
+function ChipRow({ label, items, note }: { label: string; items: string[]; note?: string }) {
   return (
     <div className="flex items-baseline gap-4">
-      {/* Fixed width so both rows' chips start on the same line. */}
+      {/* Fixed width so every row's chips start on the same line. */}
       <span className="mono-label w-20 shrink-0" style={{ fontSize: 10 }}>
         {label}
       </span>
-      <ul className="flex flex-wrap gap-2">
-        {items.map((item) => (
-          <li key={item} className="rounded-[var(--radius)] border border-border px-3 py-1.5 text-sm text-fg-muted">
-            {item}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul className="flex flex-wrap gap-2">
+          {items.map((item) => (
+            <li key={item} className="rounded-[var(--radius)] border border-border px-3 py-1.5 text-sm text-fg-muted">
+              {item}
+            </li>
+          ))}
+        </ul>
+        {note && <p className="mt-3 max-w-prose text-sm text-fg-subtle">{note}</p>}
+      </div>
     </div>
   );
 }
