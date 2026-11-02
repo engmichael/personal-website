@@ -197,6 +197,110 @@
   .skip-link:focus {
     transform: translateY(0);
   }
+
+  /* ------------------------------------------------------------ motifs
+     Card illustrations (components/ui/Motifs.tsx), all in the gold accent.
+     Hover motion triggers from a `.motif-host` ancestor. */
+  .motif-cover {
+    --motif-base: color-mix(in oklab, var(--fg) 10%, transparent);
+    --motif-strong: color-mix(in oklab, var(--fg) 24%, transparent);
+    --motif-bg: color-mix(in oklab, var(--accent) 5%, var(--surface));
+    background:
+      radial-gradient(110% 95% at 80% 25%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%),
+      var(--motif-bg);
+  }
+
+  /* rings — campuses and their reach */
+  .m-rings .dot {
+    fill: var(--accent);
+  }
+  .m-rings .ring {
+    fill: none;
+    stroke: var(--accent);
+    transform-box: fill-box;
+    transform-origin: center;
+    transition:
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--d),
+      stroke-opacity 700ms ease var(--d);
+  }
+  .motif-host:hover .m-rings .ring {
+    transform: scale(1.3);
+  }
+
+  /* sunflower — members joining */
+  .m-sunflower g {
+    transform-origin: 150px 150px;
+    transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .m-sunflower circle {
+    fill: var(--accent);
+  }
+  .motif-host:hover .m-sunflower g {
+    transform: rotate(40deg);
+  }
+
+  /* dialogue — both sides of the round */
+  .m-dialogue .bubble {
+    transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--d);
+  }
+  .m-dialogue .left path {
+    fill: var(--accent);
+  }
+  .m-dialogue .right path {
+    fill: var(--motif-strong);
+  }
+  .m-dialogue .left .text {
+    fill: var(--accent-contrast);
+    fill-opacity: 0.45;
+  }
+  .m-dialogue .right .text {
+    fill: var(--fg);
+    fill-opacity: 0.45;
+  }
+  .motif-host:hover .m-dialogue .left {
+    transform: translateX(8px);
+  }
+  .motif-host:hover .m-dialogue .right {
+    transform: translateX(-8px);
+  }
+
+  /* route — 26.2 miles */
+  .m-route .road {
+    fill: none;
+    stroke: var(--motif-base);
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .m-route .line {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+  .motif-host:hover .m-route .line {
+    animation: route-draw 1.6s cubic-bezier(0.45, 0, 0.2, 1) both;
+  }
+  .m-route .mile {
+    fill: var(--motif-bg);
+    stroke: var(--accent);
+    stroke-width: 1.3;
+  }
+  .m-route .end {
+    fill: var(--accent);
+  }
+}
+
+@keyframes route-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes grain-shift {
