@@ -11,9 +11,9 @@ export type SocialLink = {
 export const site = {
   name: "Michael Eng",
   shortName: "Michael",
-  // Recruiter-first: what I do leads; photography, travel and food are framed
-  // as the life around it (see the "Off the Clock" chapter).
-  role: "Strategy & Operations · MBA Candidate, Chicago Booth",
+  // Shown on the loading screen above the name. Photography, travel and food
+  // are framed as the life around the work (see the "Off the Clock" chapter).
+  role: "MBA Candidate @ Chicago Booth",
   tagline: "A life in motion.",
   // Shown in the hero badge, the Contact kicker, and the Contact copy.
   seeking: {

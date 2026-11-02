@@ -148,6 +148,10 @@ export const experience: Org[] = [
           "Invited to the Deloitte National Leadership Conference at Deloitte University.",
           "Selected for the Goldman Sachs Insight Series.",
         ],
+      },
+      {
+        kind: "note",
+        label: "Involvement",
         tags: [
           "Texas Consulting",
           "Delta Sigma Pi",
@@ -176,7 +180,7 @@ export const experience: Org[] = [
         label: "Summer 2018 · Hong Kong",
         title: "Dun & Bradstreet · Solutions Intern",
         summary:
-          "Devised a marketing campaign on the value of master data that brought in 80 new leads a week, scripted a Python parser to sort client reports into ETL databases (saving clients $10K), and built API packages to make the company's products easier to use.",
+          "Designed the data architecture for a large national bank running on legacy systems, scripted a Python parser and API package to sort client reports into ETL databases (saving clients $10K), and devised a master data marketing campaign that earned 80 new leads a week.",
       },
     ],
   },
