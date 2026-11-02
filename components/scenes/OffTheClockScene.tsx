@@ -22,8 +22,10 @@ export function OffTheClockScene() {
                 className="object-cover object-[50%_28%]"
               />
             </div>
-            <figcaption className="mono-label mt-3" style={{ fontSize: 10 }}>
-              {offTheClock.photo.caption}
+            {/* Two lines on purpose; together they're too wide for the column. */}
+            <figcaption className="mono-label mt-3 space-y-1" style={{ fontSize: 10 }}>
+              <span className="block">{offTheClock.photo.caption}</span>
+              <span className="block text-fg-subtle">{offTheClock.photo.date}</span>
             </figcaption>
           </figure>
         </Reveal>
