@@ -12,13 +12,14 @@ export function OffTheClockScene() {
     <Chapter id="off-the-clock" num="3" title="Off the Clock" kicker={offTheClock.label} glow="70% 30%">
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
         <Reveal>
-          <figure className="w-full max-w-[15rem] md:max-w-[17rem]">
+          {/* Fills its column from md, so it sits close to the text. */}
+          <figure className="w-full max-w-[15rem] md:max-w-none">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface">
               <Image
                 src={offTheClock.photo.src}
                 alt={offTheClock.photo.alt}
                 fill
-                sizes="(max-width: 768px) 15rem, 17rem"
+                sizes="(max-width: 768px) 15rem, 26rem"
                 className="object-cover object-[50%_28%]"
               />
             </div>

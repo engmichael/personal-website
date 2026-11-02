@@ -15,7 +15,7 @@ export const offTheClock = {
   hobbies: ["Running", "Volleyball", "Pickleball", "Guitar", "Texas Hold'em", "Reading"],
   interests: ["Subway design", "Peruvian food", "Costco", "Dallas Mavs", "Coldplay", "Christopher Nolan"],
   licenses: ["Texas Real Estate", "Class M Motorcycle", "PADI Open Water Scuba Diving"],
-  licensesNote: "On a mission to keep learning and get one new license/certification every year.",
+  licensesNote: "On a mission to keep learning and get one new license/certification every year!",
   blocks: {
     photography: {
       title: "Photography",
