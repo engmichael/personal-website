@@ -37,8 +37,8 @@ export function OffTheClockScene() {
           <div className="mt-6 space-y-5">
             <ChipRow label="Hobbies" items={offTheClock.hobbies} />
             <ChipRow label="Interests" items={offTheClock.interests} />
+            <ChipRow label="Licenses" items={offTheClock.licenses} />
           </div>
-          <p className="mt-5 max-w-prose text-sm text-fg-subtle">{offTheClock.licensed}</p>
         </Reveal>
       </div>
 

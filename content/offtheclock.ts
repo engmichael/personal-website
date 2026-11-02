@@ -14,8 +14,12 @@ export const offTheClock = {
   },
   hobbies: ["Running", "Volleyball", "Pickleball", "Guitar", "Texas Hold'em", "Reading"],
   interests: ["Subway design", "Peruvian food", "Costco", "Dallas Mavs", "Coldplay", "Christopher Nolan"],
-  licensed:
-    "Also licensed to sell Texas real estate, ride a motorcycle, scuba dive and officiate your wedding.",
+  licenses: [
+    "Texas Real Estate",
+    "Class M Motorcycle",
+    "PADI Open Water Scuba Diving",
+    "Ordained Wedding Officiation",
+  ],
   blocks: {
     photography: {
       title: "Photography",
