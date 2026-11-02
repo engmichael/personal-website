@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Chapter } from "./Chapter";
 import { Reveal } from "@/components/motion/Reveal";
-import { Orbits } from "@/components/ui/Motifs";
 import { Photography } from "./offtheclock/Photography";
 import { Travel } from "./offtheclock/Travel";
 import { Food } from "./offtheclock/Food";
@@ -12,16 +12,27 @@ export function OffTheClockScene() {
     <Chapter id="off-the-clock" num="3" title="Off the Clock" kicker={offTheClock.label} glow="70% 30%">
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
         <Reveal>
-          <div className="aspect-square w-40 md:w-full md:max-w-[17rem]">
-            <Orbits />
-          </div>
+          <figure className="w-full max-w-[15rem] md:max-w-[17rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface">
+              <Image
+                src={offTheClock.photo.src}
+                alt={offTheClock.photo.alt}
+                fill
+                sizes="(max-width: 768px) 15rem, 17rem"
+                className="object-cover object-[50%_28%]"
+              />
+            </div>
+            <figcaption className="mono-label mt-3" style={{ fontSize: 10 }}>
+              {offTheClock.photo.caption}
+            </figcaption>
+          </figure>
         </Reveal>
         <Reveal delay={0.05}>
           <p className="font-display text-2xl leading-[0.98] tracking-[-0.02em]">
             A life <span className="text-accent">in motion.</span>
           </p>
           <p className="mt-6 max-w-prose text-fg-muted">{offTheClock.intro}</p>
-          <div className="mt-6 space-y-3">
+          <div className="mt-6 space-y-5">
             <ChipRow label="Hobbies" items={offTheClock.hobbies} />
             <ChipRow label="Interests" items={offTheClock.interests} />
           </div>

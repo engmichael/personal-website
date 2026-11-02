@@ -1,8 +1,7 @@
-/* Gold line illustrations. The four card motifs for Leadership & Impact are
-   ported from the v4 site's project covers; Orbits sits beside "A life in
-   motion" in Off the Clock. Static SVG, the same on every render; motion
-   lives in globals.css under "motifs" (card hover triggers from a
-   `.motif-host` ancestor). */
+/* Card illustrations for Leadership & Impact, ported from the v4 site's
+   project covers and recoloured in the gold accent. Static SVG, the same on
+   every render; hover motion lives in globals.css under "motifs" and
+   triggers from a `.motif-host` ancestor. */
 
 import type { CSSProperties, ReactElement, ReactNode } from "react";
 import type { Motif } from "@/content/achievements";
@@ -179,47 +178,6 @@ function Route() {
       ))}
       <circle className="end" cx={start[0]} cy={start[1]} r={5.5} />
       <circle className="end" cx={finish[0]} cy={finish[1]} r={7} />
-    </Svg>
-  );
-}
-
-/** Three bodies on slow, separate orbits: a life in motion (Off the Clock). */
-export function Orbits() {
-  const orbits = [
-    { r: 52, size: 5, start: 30, period: "38s" },
-    { r: 92, size: 6.5, start: 205, period: "64s" },
-    { r: 132, size: 4.5, start: 310, period: "96s" },
-  ];
-  const at = (r: number, deg: number): Point => [
-    round(150 + r * Math.cos((deg * Math.PI) / 180)),
-    round(150 + r * Math.sin((deg * Math.PI) / 180)),
-  ];
-  return (
-    <Svg viewBox="0 0 300 300" className="m-orbits">
-      {orbits.map((o, i) => (
-        <circle key={i} className="track" cx={150} cy={150} r={o.r} strokeDasharray={i === 2 ? "2 6" : undefined} />
-      ))}
-      <circle className="halo" cx={150} cy={150} r={11} />
-      <circle className="sun" cx={150} cy={150} r={3.5} />
-      {orbits.map((o, i) => (
-        <g key={i} className="orbit" style={{ "--t": o.period } as CSSProperties}>
-          {/* A fading trail behind each body; rotation is clockwise, so it trails at smaller angles. */}
-          {Array.from({ length: 6 }, (_, k) => {
-            const [x, y] = at(o.r, o.start - (k + 1) * 6);
-            return (
-              <circle
-                key={k}
-                className="trail"
-                cx={x}
-                cy={y}
-                r={round(o.size * (1 - (k + 1) * 0.12))}
-                fillOpacity={round(0.55 * (1 - (k + 1) / 7))}
-              />
-            );
-          })}
-          <circle className="body" cx={at(o.r, o.start)[0]} cy={at(o.r, o.start)[1]} r={o.size} />
-        </g>
-      ))}
     </Svg>
   );
 }
