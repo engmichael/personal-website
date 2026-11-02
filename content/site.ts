@@ -18,7 +18,7 @@ export const site = {
   // Shown in the hero badge, the Contact kicker, and the Contact copy.
   seeking: {
     badge: "Recruiting · Summer 2027",
-    sentence: "I'm recruiting for Summer 2027 strategy consulting internships",
+    sentence: "I'm recruiting for Summer 2027 internships",
   },
   // Current résumé (public/Michael-Eng-Resume.pdf). Set to null to fall back to LinkedIn.
   resume: "/Michael-Eng-Resume.pdf" as string | null,
