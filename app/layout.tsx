@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — ${site.role}`,
     description:
-      "MBA candidate at Chicago Booth, previously in strategy at Accenture. Recruiting for Summer 2027 strategy consulting internships.",
+      "MBA candidate at Chicago Booth, previously in strategy at Accenture. Recruiting for Summer 2027 internships.",
     url: "/",
   },
   twitter: { card: "summary_large_image" },
