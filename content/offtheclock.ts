@@ -19,7 +19,7 @@ export const offTheClock = {
   blocks: {
     photography: {
       title: "Photography",
-      lede: "Mostly cities, mostly on foot. A few frames from a 2020 semester in Prague and the trips since.",
+      lede: "Mostly on foot, occasionally above the clouds. Frames from Yosemite to Kilimanjaro, Hong Kong to Hokkaido.",
     },
     travel: {
       title: "Travel",

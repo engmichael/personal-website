@@ -4,9 +4,8 @@ import { BlockHeader } from "./BlockHeader";
 import { photos } from "@/content/photos";
 import { offTheClock } from "@/content/offtheclock";
 import { site } from "@/content/site";
-import { cn } from "@/lib/utils/cn";
 
-/** Editorial grid: 3 columns on desktop with a tall frame spanning two rows. */
+/** Masonry of uncropped frames: 1 column on phones, 2 from sm, 3 from md. */
 export function Photography() {
   const block = offTheClock.blocks.photography;
   return (
@@ -27,29 +26,23 @@ export function Photography() {
           </a>
         }
       />
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+      <div className="gap-4 sm:columns-2 md:columns-3 md:gap-5">
         {photos.map((p, i) => (
-          <Reveal key={p.src} delay={0.05 * i} className={cn(p.tall && "sm:row-span-2")}>
-            <figure className="group h-full">
-              <div
-                className={cn(
-                  "relative overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface",
-                  p.tall ? "aspect-[3/4] sm:aspect-auto sm:h-[calc(100%-2.25rem)]" : "aspect-[4/3]",
-                )}
-              >
+          <Reveal key={p.src} delay={0.04 * (i % 3)} className="mb-6 break-inside-avoid md:mb-7">
+            <figure className="group">
+              <div className="overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface">
                 <Image
                   src={p.src}
                   alt={p.alt}
-                  fill
+                  width={p.width}
+                  height={p.height}
                   sizes="(max-width: 640px) 92vw, (max-width: 768px) 46vw, 31vw"
-                  className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.04]"
+                  className="h-auto w-full transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.04]"
                 />
               </div>
-              <figcaption className="mono-label mt-3 flex items-center justify-between" style={{ fontSize: 10 }}>
+              <figcaption className="mono-label mt-3 flex items-center justify-between gap-4" style={{ fontSize: 10 }}>
                 <span className="text-fg">{p.title}</span>
-                <span>
-                  {p.location} · {p.year}
-                </span>
+                <span>{p.year ? `${p.location} · ${p.year}` : p.location}</span>
               </figcaption>
             </figure>
           </Reveal>
