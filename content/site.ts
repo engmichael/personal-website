@@ -24,6 +24,9 @@ export const site = {
   resume: "/Michael-Eng-Resume.pdf" as string | null,
   linkedin: "https://www.linkedin.com/in/eng-michael/",
   instagram: "https://instagram.com/engmichael_",
+  // Shown under Travel and Food.
+  flighty: "https://friends.flighty.com/0ea041ea-7961-4768-9b10-26d2cbfa77a6",
+  beli: "https://beliapp.co/app/engmichael",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://michaeleng.me",
   email: "engmichael@icloud.com",
   socials: [

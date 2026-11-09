@@ -4,7 +4,7 @@
 export const offTheClock = {
   label: "Travel · Food · Photography",
   intro:
-    "The same instincts as the day job — curiosity, a plan, and a high bar — pointed somewhere else. I keep a running list of cities, plan more trips around dinner than I'd like to admit, and carry a camera everywhere I go.",
+    "Outside of work, I'm happiest on the move: training for a race, planning the next trip, or tracking down a meal worth the detour. A camera usually comes along for all of it.",
   // Beside "A life in motion" at the top of the chapter.
   photo: {
     src: "/media/nyc-marathon-2025.jpg",
@@ -19,15 +19,15 @@ export const offTheClock = {
   blocks: {
     photography: {
       title: "Photography",
-      lede: "Mostly on foot, occasionally above the clouds. Frames from Yosemite to Kilimanjaro, Hong Kong to Hokkaido.",
+      lede: "Some of my favorite shots I've taken around the world.",
     },
     travel: {
       title: "Travel",
-      lede: "Fourteen places that shaped me, from Plano to Hong Kong — and one summit.",
+      lede: "68 flights and 6 continents last year. Always looking for the next adventure.",
     },
     food: {
       title: "Food",
-      lede: "Four years of eating my way through New York, ranked. The Chicago list is in progress.",
+      lede: "I rank everywhere I go and am a top 0.5% diner globally.",
     },
   },
 };

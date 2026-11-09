@@ -2,9 +2,10 @@
 
 import dynamic from "next/dynamic";
 import { Reveal } from "@/components/motion/Reveal";
-import { BlockHeader } from "./BlockHeader";
+import { BlockHeader, BlockLink } from "./BlockHeader";
 import { places } from "@/content/places";
 import { offTheClock } from "@/content/offtheclock";
+import { site } from "@/content/site";
 
 // Lazy: d3-geo + the vendored topojson only load when this block is reached.
 const WorldMap = dynamic(() => import("@/components/scenes/WorldMap").then((m) => m.WorldMap), {
@@ -24,7 +25,7 @@ export function Travel() {
         numeral="3.1"
         title={block.title}
         lede={block.lede}
-        aside={<span className="mono-label">{places.length} places</span>}
+        aside={<BlockLink href={site.flighty}>Add me on Flighty</BlockLink>}
       />
       <Reveal>
         <div className="rounded-[var(--radius-lg)] border border-border bg-surface/30 p-4 sm:p-8">

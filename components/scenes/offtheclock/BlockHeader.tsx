@@ -19,3 +19,12 @@ export function BlockHeader({ numeral, title, lede, aside }: Props) {
     </Reveal>
   );
 }
+
+/** The outbound "→" link in a block header's aside (Instagram, Flighty, Beli). */
+export function BlockLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-fg" data-cursor>
+      {children} →
+    </a>
+  );
+}

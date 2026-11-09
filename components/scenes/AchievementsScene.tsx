@@ -6,7 +6,7 @@ import { achievements } from "@/content/achievements";
 /** Chapter 2 — Leadership & Impact. Stat-led cards, each topped with an illustration. */
 export function AchievementsScene() {
   return (
-    <Chapter id="leadership" num="2" title="Leadership & Impact" kicker="Built, led, raised" glow="28% 55%">
+    <Chapter id="leadership" num="2" title="Leadership & Impact" kicker="Expanding educational access" glow="28% 55%">
       <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {achievements.map((a, i) => (
           <Reveal key={a.title} delay={0.08 * i}>

@@ -1,7 +1,8 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { BlockHeader } from "./BlockHeader";
+import { BlockHeader, BlockLink } from "./BlockHeader";
 import { eats } from "@/content/eats";
 import { offTheClock } from "@/content/offtheclock";
+import { site } from "@/content/site";
 
 /** Ranked list in two columns, then three notes. */
 export function Food() {
@@ -12,11 +13,7 @@ export function Food() {
         numeral="3.2"
         title={block.title}
         lede={block.lede}
-        aside={
-          <span className="mono-label">
-            {eats.city} · {eats.period}
-          </span>
-        }
+        aside={<BlockLink href={site.beli}>Follow me on Beli</BlockLink>}
       />
 
       <Reveal>

@@ -6,10 +6,8 @@ export type EatsRanked = { num: string; name: string; cuisine: string; hood: str
 export type EatsFeatured = { rank: string; kicker: string; name: string; info: string; body: string };
 
 export const eats = {
-  city: "New York City",
   rankedHeading: "The list, in order.",
   featuredHeading: "Three, with notes.",
-  period: "2022 — 2026",
   footer: "Want the full database? Find me on Beli at @engmichael.",
   ranked: [
     { num: "01", name: "Atomix", cuisine: "Korean tasting", hood: "NoMad" },

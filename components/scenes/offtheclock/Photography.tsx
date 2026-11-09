@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
-import { BlockHeader } from "./BlockHeader";
+import { BlockHeader, BlockLink } from "./BlockHeader";
 import { photos } from "@/content/photos";
 import { offTheClock } from "@/content/offtheclock";
 import { site } from "@/content/site";
@@ -14,17 +14,7 @@ export function Photography() {
         numeral="3.3"
         title={block.title}
         lede={block.lede}
-        aside={
-          <a
-            href={site.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-underline text-sm text-fg"
-            data-cursor
-          >
-            More on Instagram →
-          </a>
-        }
+        aside={<BlockLink href={site.instagram}>More on Instagram</BlockLink>}
       />
       <div className="gap-4 sm:columns-2 md:columns-3 md:gap-5">
         {photos.map((p, i) => (
