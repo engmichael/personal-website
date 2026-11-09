@@ -30,11 +30,10 @@ export function Chapter({ id, num, title, kicker, children, className, bleed, gl
       )}
       <div className="shell">
         <Reveal>
-          <div className="mb-12 flex flex-wrap items-baseline gap-x-5 gap-y-2 border-b border-border/60 pb-5">
-            {/* Italic serif numeral + hairline, the same voice as the 3.1-style block numerals. */}
-            <span className="flex items-baseline gap-4">
-              <span className="font-display text-xl italic leading-none text-accent">{num.padStart(2, "0")}</span>
-              <span aria-hidden className="h-px w-8 self-center bg-accent/40" />
+          <div className="mb-12 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-border/60 pb-5">
+            {/* Serif numeral in a hairline box with a faint gold tint; pb nudges the figure to optical center. */}
+            <span className="inline-flex size-10 items-center justify-center rounded-[4px] border border-accent/55 bg-accent/10 pb-0.5 font-display text-[1.5rem] leading-none text-accent">
+              {num}
             </span>
             <h2 className="font-display text-2xl leading-none">{title}</h2>
             {kicker && <span className="ml-auto text-sm text-fg-subtle">{kicker}</span>}
