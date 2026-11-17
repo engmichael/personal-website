@@ -47,8 +47,12 @@ export const experience: Org[] = [
         label: "Chicago Booth School of Business",
         title: "MBA · MS in Computer Science",
         summary: "Concentrations in Strategic Management, Finance and International Business.",
-        // Names only for now; details to come from Michael.
-        bullets: ["Tarrson Fund", "Golub Board Fellows"],
+        // Tarrson and Golub details from the Rustandy Center's program pages.
+        bullets: [
+          "Won 1st place (Graduate track) in the think-cell Global Case Competition 2026, competing against ~1,600 students from ~290 universities; developed a B2B growth strategy for Duolingo backed by market prioritization and a 3-year financial model.",
+          "Selected as an Associate for the Steven Tarrson Impact Investment Fund, one of the largest student-managed impact funds in the U.S., sourcing and diligencing pre-seed and seed ventures and recommending $50K–$100K investments to the Student Investment Committee.",
+          "Selected as a Golub Capital Board Fellow, serving as a non-voting board member of a Chicago nonprofit for a seven-month term and delivering a strategic consulting project for its leadership.",
+        ],
       },
       {
         kind: "note",
