@@ -11,14 +11,15 @@ export function ContactScene() {
         <div>
           <Reveal>
             <h3 className="font-display text-2xl leading-[1.06]">
-              The best ideas start as a coffee, a long walk, or a{" "}
-              <span className="text-accent">half-formed text</span>.
+              The best ideas start as a coffee, a long walk, or{" "}
+              <span className="text-accent">a good meal</span>.
             </h3>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-prose text-fg-muted">
-              {site.seeking.sentence}, and always glad to talk shop. I&apos;m easy to reach, and I
-              answer — whether it&apos;s a role, a project, or a restaurant I have to try.
+              {site.seeking.sentence}, and always happy to chat. I&apos;m easy to reach, so feel free
+              to email me, whether it&apos;s a role/project, a new restaurant to try, or just to say
+              hello!
             </p>
           </Reveal>
           <Reveal delay={0.15}>
